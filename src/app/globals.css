@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+/* Glassmorphism effects */
+.glass {
+  @apply bg-white/10 backdrop-blur-md border border-white/20;
+}
+
+.glass-card {
+  @apply bg-white/5 backdrop-blur-lg border border-white/10 shadow-xl;
+}
+
+/* Custom gradient background */
+.bg-gradient-custom {
+  background: linear-gradient(135deg, #2a2e45 0%, #1a1a2e 50%, #0f0f23 100%);
+}
