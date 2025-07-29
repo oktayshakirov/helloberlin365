@@ -82,26 +82,26 @@ function PricingCard({ plan }: { plan: PricingPlan }) {
     <Card
       className={`relative glass-card transition-all duration-300 hover:scale-105 ${
         plan.isPopular
-          ? "border-[#9e0031]/50 shadow-[0_0_20px_rgba(158,0,49,0.3)]"
-          : "border-white/10"
+          ? "border-primary/50 shadow-[0_0_20px_var(--color-primary-glow)]"
+          : "border-border-secondary"
       }`}
     >
       {plan.isPopular && (
-        <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-[#9e0031] text-white border-0">
+        <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-text-primary border-0">
           Am beliebtesten
         </Badge>
       )}
 
       <CardHeader className="text-center pb-4">
-        <CardTitle className="text-2xl font-bold text-white">
+        <CardTitle className="text-2xl font-bold text-text-primary">
           {plan.title}
         </CardTitle>
         <div className="flex items-center justify-center gap-2">
-          <span className="text-3xl font-bold text-[#9e0031]">
+          <span className="text-3xl font-bold text-primary">
             {plan.currencySymbol}
             {plan.salePrice}
           </span>
-          <span className="text-xl text-white/60 line-through">
+          <span className="text-xl text-text-tertiary line-through">
             {plan.currencySymbol}
             {plan.price}
           </span>
@@ -112,8 +112,8 @@ function PricingCard({ plan }: { plan: PricingPlan }) {
         <ul className="space-y-3">
           {plan.features.map((feature, index) => (
             <li key={index} className="flex items-center gap-3">
-              <Check className="h-5 w-5 text-[#9e0031] flex-shrink-0" />
-              <span className="text-white text-sm">{feature}</span>
+              <Check className="h-5 w-5 text-primary flex-shrink-0" />
+              <span className="text-text-primary text-sm">{feature}</span>
             </li>
           ))}
         </ul>
@@ -127,8 +127,10 @@ export function Pricing() {
     <section id="pricing" className="py-16 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-white mb-4">Unsere Preise</h2>
-          <p className="text-xl text-white/80">
+          <h2 className="text-4xl font-bold text-text-primary mb-4">
+            Unsere Preise
+          </h2>
+          <p className="text-xl text-text-secondary">
             Transparente Preise für jeden Bedarf
           </p>
         </div>

@@ -5,20 +5,17 @@ export function Hero() {
     <section id="home" className="pt-20 pb-16 px-4">
       <div className="max-w-7xl mx-auto text-center">
         <div className="space-y-8">
-          <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight">
+          <h1 className="text-5xl md:text-7xl font-bold text-text-primary leading-tight">
             Hello Berlin 365
           </h1>
-          <p className="text-2xl md:text-3xl text-[#9e0031] font-semibold">
-            Ihre Marke. Unsere Mission. Jeden Tag.
+          <p className="text-2xl md:text-3xl text-primary font-semibold">
+            Your Brand. Our Mission. Every Day.
           </p>
-          <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-text-secondary max-w-3xl mx-auto">
             Wir sind Ihre Kreativagentur für moderne digitale Lösungen und
             professionelle Fotografie.
           </p>
-          <Button
-            size="lg"
-            className="bg-[#9e0031] hover:bg-[#9e0031]/90 text-white text-lg px-8 py-4"
-          >
+          <Button size="lg" className="text-lg px-8 py-4">
             Projekt starten
           </Button>
         </div>

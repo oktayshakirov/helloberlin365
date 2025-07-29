@@ -16,27 +16,27 @@ interface TargetCustomer {
 const customers: TargetCustomer[] = [
   {
     title: "Influencer",
-    icon: <Sparkles className="h-8 w-8 text-[#9e0031]" />,
+    icon: <Sparkles className="h-8 w-8 text-primary" />,
   },
   {
     title: "Friseure",
-    icon: <Scissors className="h-8 w-8 text-[#9e0031]" />,
+    icon: <Scissors className="h-8 w-8 text-primary" />,
   },
   {
     title: "Startups",
-    icon: <Building2 className="h-8 w-8 text-[#9e0031]" />,
+    icon: <Building2 className="h-8 w-8 text-primary" />,
   },
   {
     title: "Autohäuser",
-    icon: <Car className="h-8 w-8 text-[#9e0031]" />,
+    icon: <Car className="h-8 w-8 text-primary" />,
   },
   {
     title: "Gastronomie",
-    icon: <Utensils className="h-8 w-8 text-[#9e0031]" />,
+    icon: <Utensils className="h-8 w-8 text-primary" />,
   },
   {
     title: "Makler",
-    icon: <Briefcase className="h-8 w-8 text-[#9e0031]" />,
+    icon: <Briefcase className="h-8 w-8 text-primary" />,
   },
 ];
 
@@ -45,10 +45,10 @@ export function TargetCustomers() {
     <section className="py-16 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-white mb-4">
+          <h2 className="text-4xl font-bold text-text-primary mb-4">
             Unsere Zielgruppen
           </h2>
-          <p className="text-xl text-white/80">
+          <p className="text-xl text-text-secondary">
             Wir unterstützen verschiedene Branchen mit maßgeschneiderten
             Lösungen
           </p>
@@ -61,8 +61,8 @@ export function TargetCustomers() {
               className="glass-card hover:scale-105 transition-all duration-300 cursor-pointer"
             >
               <CardContent className="flex flex-col items-center justify-center p-6 text-center space-y-4">
-                <div className="text-[#9e0031]">{customer.icon}</div>
-                <h3 className="text-white font-semibold text-sm md:text-base">
+                <div className="text-primary">{customer.icon}</div>
+                <h3 className="text-text-primary font-semibold text-sm md:text-base">
                   {customer.title}
                 </h3>
               </CardContent>
