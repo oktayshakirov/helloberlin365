@@ -14,7 +14,7 @@ export async function sendEmail(
     const message = formData.get("message") as string;
 
     if (!name || !email || !message) {
-      return { error: "All fields are required" };
+      return { error: "Alle Felder sind erforderlich" };
     }
 
     const { error } = await resend.emails.send({
@@ -33,12 +33,17 @@ export async function sendEmail(
 
     if (error) {
       console.error("Resend error:", error);
-      return { error: "Failed to send email. Please try again." };
+      return {
+        error:
+          "E-Mail konnte nicht gesendet werden. Bitte versuchen Sie es erneut.",
+      };
     }
 
-    return { success: "Message sent successfully!" };
+    return { success: "Nachricht erfolgreich gesendet!" };
   } catch (error) {
     console.error("Server error:", error);
-    return { error: "Something went wrong. Please try again." };
+    return {
+      error: "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
+    };
   }
 }
