@@ -23,7 +23,7 @@ export function Footer() {
                   href="#services"
                   className="text-text-secondary hover:text-primary transition-colors"
                 >
-                  Dienstleistungen
+                  Services
                 </a>
               </li>
               <li>
