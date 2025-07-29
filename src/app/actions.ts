@@ -19,9 +19,9 @@ export async function sendEmail(
 
     const { error } = await resend.emails.send({
       from: "Contact Form <noreply@helloberlin365.com>",
-      to: ["contact@helloberlin365.com"],
+      to: ["helloberlin365@gmail.com"],
       replyTo: email,
-      subject: `New Contact Form Submission from ${name}`,
+      subject: `New Email from ${name}`,
       html: `
         <h2>New Contact Form Submission</h2>
         <p><strong>Name:</strong> ${name}</p>
