@@ -87,7 +87,7 @@ function PricingCard({ plan }: { plan: PricingPlan }) {
       }`}
     >
       {plan.isPopular && (
-        <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-text-primary border-0">
+        <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 border-0">
           Am beliebtesten
         </Badge>
       )}

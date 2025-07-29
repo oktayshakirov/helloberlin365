@@ -1,8 +1,16 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Send, Mail, Phone } from "lucide-react";
+import { sendEmail } from "@/app/actions";
+import { useActionState } from "react";
 
 export function Contact() {
+  const [state, formAction] = useActionState(sendEmail, { error: "" } as
+    | { error: string }
+    | { success: string });
+
   return (
     <section id="contact" className="py-16 px-4">
       <div className="max-w-7xl mx-auto">
@@ -22,12 +30,24 @@ export function Contact() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <form className="space-y-6">
+              <form action={formAction} className="space-y-6">
+                {"error" in state && state.error && (
+                  <div className="p-3 bg-red-100 border border-red-300 text-red-700 rounded-lg">
+                    {state.error}
+                  </div>
+                )}
+                {"success" in state && state.success && (
+                  <div className="p-3 bg-green-100 border border-green-300 text-green-700 rounded-lg">
+                    {state.success}
+                  </div>
+                )}
                 <div className="space-y-2">
                   <label className="text-text-primary">Name</label>
                   <input
                     type="text"
+                    name="name"
                     placeholder="Ihr Name"
+                    required
                     className="w-full p-3 rounded-lg bg-surface-primary border border-border-primary text-text-primary placeholder-text-muted"
                   />
                 </div>
@@ -35,22 +55,23 @@ export function Contact() {
                   <label className="text-text-primary">E-Mail</label>
                   <input
                     type="email"
+                    name="email"
                     placeholder="ihre.email@beispiel.com"
+                    required
                     className="w-full p-3 rounded-lg bg-surface-primary border border-border-primary text-text-primary placeholder-text-muted"
                   />
                 </div>
                 <div className="space-y-2">
                   <label className="text-text-primary">Nachricht</label>
                   <textarea
+                    name="message"
                     rows={5}
                     placeholder="Erzählen Sie uns von Ihrem Projekt..."
+                    required
                     className="w-full p-3 rounded-lg bg-surface-primary border border-border-primary text-text-primary placeholder-text-muted"
                   />
                 </div>
-                <Button
-                  type="submit"
-                  className="w-full bg-primary hover:bg-primary-hover text-text-primary"
-                >
+                <Button type="submit" className="w-full">
                   Nachricht senden
                 </Button>
               </form>

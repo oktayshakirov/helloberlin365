@@ -3,8 +3,8 @@
 /* Semantic Color Tokens */
 :root {
   /* Brand Colors */
-  --color-primary: #00919e;
-  --color-primary-hover: #007a85;
+  --color-primary: #9e0031;
+  --color-primary-hover: #7a0026;
   --color-primary-light: rgba(255, 255, 255, 0.559);
   --color-primary-glow: rgba(0, 145, 158, 0.3);
 
@@ -19,10 +19,10 @@
   --color-surface-tertiary: rgba(0, 0, 0, 0.01);
 
   /* Text Colors */
-  --color-text-primary: #000000;
-  --color-text-secondary: rgba(0, 0, 0, 0.8);
-  --color-text-tertiary: rgba(0, 0, 0, 0.6);
-  --color-text-muted: rgba(0, 0, 0, 0.5);
+  --color-text-primary: #ffffff;
+  --color-text-secondary: rgba(255, 255, 255, 0.8);
+  --color-text-tertiary: rgba(255, 255, 255, 0.6);
+  --color-text-muted: rgba(255, 255, 255, 0.5);
 
   /* Border Colors */
   --color-border-primary: rgba(0, 0, 0, 0.2);
@@ -58,12 +58,12 @@
 
 /* Custom gradient background */
 .bg-gradient-custom {
-  background: linear-gradient(to right, #50c9c3, #96deda);
+  background: linear-gradient(to right, #ece9e6, #ffffff);
 }
 
 /* Semantic utility classes */
 .text-primary {
-  color: var(--color-text-primary);
+  color: var(--color-primary);
 }
 .text-secondary {
   color: var(--color-text-secondary);
