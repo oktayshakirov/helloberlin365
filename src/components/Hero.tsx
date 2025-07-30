@@ -29,10 +29,15 @@ export function Hero() {
       <div className="relative">
         <Glow variant="navbar" />
         <div className="container mx-auto relative z-10">
-          <div className="flex gap-8 py-20 lg:py-40 items-center justify-center flex-col">
+          <div className="flex gap-8 py-8 lg:py-40 items-center justify-center flex-col">
             <div className="flex gap-4 flex-col">
-              <h1 className="text-5xl md:text-7xl max-w-2xl tracking-tighter text-center font-regular">
-                <span className="text-text-primary">Hello Berlin 365</span>
+              <h1 className="text-5xl md:text-7xl max-w-2xl tracking-tighter text-center font-black">
+                <span className="text-text-primary drop-shadow-lg">
+                  Hello Berlin{" "}
+                  <span className="inline-block bg-primary text-white px-4 py-2 rounded-full text-5xl md:text-7xl font-bold shadow-lg">
+                    365
+                  </span>
+                </span>
                 <span className="relative flex w-full justify-center overflow-hidden text-center md:pb-4 md:pt-1">
                   &nbsp;
                   {slogans.map((slogan, index) => (
@@ -66,7 +71,10 @@ export function Hero() {
               </p>
             </div>
             <div className="flex flex-row gap-3">
-              <Button size="lg" className="gap-4">
+              <Button
+                size="lg"
+                className="gap-4 bg-primary hover:bg-primary-hover text-white font-semibold px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+              >
                 <Link href="/#contact">Kontaktieren Sie uns</Link>
               </Button>
             </div>

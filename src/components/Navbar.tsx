@@ -19,7 +19,7 @@ const navigation = [
 export function Navbar() {
   return (
     <>
-      <header className="py-2 fixed top-0 left-0 right-0 z-50 glass backdrop-blur-md border-b border-border-secondary">
+      <header className="py-2 fixed top-0 left-0 right-0 z-50 glass backdrop-blur-md border-b border-border-secondary hidden lg:block">
         <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
           {/* Desktop Menu */}
           <nav
@@ -42,9 +42,6 @@ export function Navbar() {
                   className="h-10 w-10"
                   priority
                 />
-                <span className="text-lg font-bold text-text-primary">
-                  Hello Berlin 365
-                </span>
               </a>
             </div>
             <div className="flex items-center">
@@ -53,7 +50,7 @@ export function Navbar() {
                   <li key={item.title}>
                     <a
                       href={item.url}
-                      className="text-text-primary hover:text-primary transition-colors text-base font-medium"
+                      className="text-text-primary hover:text-primary transition-colors text-base font-bold tracking-wide"
                       aria-label={item.ariaLabel}
                     >
                       {item.title}
@@ -63,30 +60,6 @@ export function Navbar() {
               </ul>
             </div>
           </nav>
-
-          {/* Mobile Top Bar */}
-          <div className="block lg:hidden">
-            <div className="flex items-center justify-between">
-              {/* Logo */}
-              <a
-                href="#home"
-                className="flex items-center gap-3"
-                aria-label="Zur Startseite"
-              >
-                <Image
-                  src="/images/logo.png"
-                  alt="Hello Berlin 365 Logo"
-                  width={32}
-                  height={32}
-                  className="h-8 w-8"
-                  priority
-                />
-                <span className="text-base font-bold text-text-primary">
-                  Hello Berlin 365
-                </span>
-              </a>
-            </div>
-          </div>
         </div>
       </header>
 
@@ -102,7 +75,7 @@ export function Navbar() {
               <li key={item.title}>
                 <a
                   href={item.url}
-                  className="flex flex-col items-center gap-1 text-text-primary hover:text-primary transition-colors text-xs font-medium"
+                  className="flex flex-col items-center gap-1 text-text-primary hover:text-primary transition-colors text-xs font-bold tracking-wide"
                   aria-label={item.ariaLabel}
                 >
                   <span className="text-center">{item.title}</span>

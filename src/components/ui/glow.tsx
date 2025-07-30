@@ -10,7 +10,7 @@ const glowVariants = cva("absolute w-full", {
       bottom: "bottom-0",
       below: "-bottom-[128px]",
       center: "top-[50%]",
-      navbar: "-top-[250px]",
+      navbar: "-top-[300px]",
     },
   },
   defaultVariants: {
