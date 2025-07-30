@@ -115,7 +115,7 @@ export function Hero() {
 
   const renderImage = (width: number, height: number, className?: string) => (
     <Image
-      src="/images/gadgets.png"
+      src="/images/hero.webp"
       alt="Laptop, DSLR camera, and pen holder setup"
       width={width}
       height={height}
