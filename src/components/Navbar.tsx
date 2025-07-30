@@ -1,5 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import { Home, Code, DollarSign, Users, Phone } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useEffect, useState } from "react";
 
 const navigation = [
   {
@@ -35,6 +39,34 @@ const navigation = [
 ];
 
 export function Navbar() {
+  const [activeSection, setActiveSection] = useState("home");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = navigation.map((item) => item.url.replace("#", ""));
+      const scrollPosition = window.scrollY + 100;
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (
+            scrollPosition >= offsetTop &&
+            scrollPosition < offsetTop + offsetHeight
+          ) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
       <header className="py-2 fixed top-0 left-0 right-0 z-50 glass backdrop-blur-md border-b border-border-secondary hidden lg:block">
@@ -46,7 +78,6 @@ export function Navbar() {
             aria-label="Hauptnavigation"
           >
             <div className="flex items-center gap-6">
-              {/* Logo */}
               <a
                 href="#home"
                 className="flex items-center gap-3"
@@ -62,21 +93,51 @@ export function Navbar() {
                 />
               </a>
             </div>
+
             <div className="flex items-center">
-              <ul className="flex space-x-8 mr-12 list-none">
-                {navigation.map((item) => (
-                  <li key={item.title}>
-                    <a
-                      href={item.url}
-                      className="text-text-primary hover:text-primary transition-colors text-base font-bold tracking-wide flex items-center gap-2"
-                      aria-label={item.ariaLabel}
-                    >
+              <ul className="flex space-x-8 list-none">
+                {navigation
+                  .filter((item) => item.title !== "Kontakt")
+                  .map((item) => {
+                    const sectionId = item.url.replace("#", "");
+                    const isActive = activeSection === sectionId;
+
+                    return (
+                      <li key={item.title}>
+                        <a
+                          href={item.url}
+                          className={`transition-colors text-base font-bold tracking-wide flex items-center gap-2 py-2 relative group ${
+                            isActive
+                              ? "text-primary"
+                              : "text-text-primary hover:text-primary"
+                          }`}
+                          aria-label={item.ariaLabel}
+                        >
+                          <item.icon className="h-4 w-4" />
+                          {item.title}
+                          <span
+                            className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300 ${
+                              isActive ? "w-full" : "w-0 group-hover:w-full"
+                            }`}
+                          ></span>
+                        </a>
+                      </li>
+                    );
+                  })}
+              </ul>
+            </div>
+
+            <div className="flex items-center">
+              {navigation
+                .filter((item) => item.title === "Kontakt")
+                .map((item) => (
+                  <Button key={item.title} asChild size="lg" className="gap-2">
+                    <a href={item.url} aria-label={item.ariaLabel}>
                       <item.icon className="h-4 w-4" />
                       {item.title}
                     </a>
-                  </li>
+                  </Button>
                 ))}
-              </ul>
             </div>
           </nav>
         </div>
@@ -90,18 +151,27 @@ export function Navbar() {
       >
         <div className="container mx-auto px-4">
           <ul className="flex items-center justify-around py-3 list-none">
-            {navigation.map((item) => (
-              <li key={item.title}>
-                <a
-                  href={item.url}
-                  className="flex flex-col items-center gap-1 text-text-primary hover:text-primary transition-colors text-xs font-bold tracking-wide"
-                  aria-label={item.ariaLabel}
-                >
-                  <item.icon className="h-5 w-5" />
-                  <span className="text-center">{item.title}</span>
-                </a>
-              </li>
-            ))}
+            {navigation.map((item) => {
+              const sectionId = item.url.replace("#", "");
+              const isActive = activeSection === sectionId;
+
+              return (
+                <li key={item.title}>
+                  <a
+                    href={item.url}
+                    className={`flex flex-col items-center gap-1 transition-colors text-xs font-bold tracking-wide ${
+                      isActive
+                        ? "text-primary"
+                        : "text-text-primary hover:text-primary"
+                    }`}
+                    aria-label={item.ariaLabel}
+                  >
+                    <item.icon className="h-5 w-5" />
+                    <span className="text-center">{item.title}</span>
+                  </a>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </nav>

@@ -64,7 +64,7 @@ export function Footer() {
                 <Facebook className="h-5 w-5" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/helloberlin365/"
                 className="text-text-secondary hover:text-primary transition-colors"
               >
                 <Instagram className="h-5 w-5" />

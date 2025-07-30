@@ -29,6 +29,7 @@ const pricingPlans: PricingPlan[] = [
       "Technische SEO / Optimierung und Pagespeed",
       "15 Fotos",
       "Product oder Locationfotos",
+      "Grundbearbeitung & Weboptimierung",
     ],
   },
   {
