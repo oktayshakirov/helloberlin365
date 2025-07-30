@@ -24,7 +24,7 @@ export function Hero() {
   }, [sloganNumber, slogans]);
 
   return (
-    <div className="w-full">
+    <section id="home" className="w-full">
       <div className="container mx-auto">
         <div className="flex gap-8 py-20 lg:py-40 items-center justify-center flex-col">
           <div className="flex gap-4 flex-col">
@@ -69,6 +69,6 @@ export function Hero() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
