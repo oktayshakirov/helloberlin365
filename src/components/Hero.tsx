@@ -28,7 +28,7 @@ export function Hero() {
     <section id="home" className="w-full relative overflow-hidden">
       <div className="relative">
         <Glow variant="navbar" />
-        <div className="container mx-auto relative z-10">
+        <div className="container mx-auto relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="flex gap-8 py-8 lg:py-40 items-center justify-center flex-col">
             <div className="flex gap-4 flex-col">
               <h1 className="text-5xl md:text-7xl max-w-2xl tracking-tighter text-center font-black">

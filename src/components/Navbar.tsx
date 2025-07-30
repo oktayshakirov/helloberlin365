@@ -1,19 +1,37 @@
 import Image from "next/image";
+import { Home, Code, DollarSign, Users, Phone } from "lucide-react";
 
 const navigation = [
-  { title: "Startseite", url: "#home", ariaLabel: "Zur Startseite navigieren" },
+  {
+    title: "Startseite",
+    url: "#home",
+    ariaLabel: "Zur Startseite navigieren",
+    icon: Home,
+  },
   {
     title: "Services",
     url: "#services",
     ariaLabel: "Zu unsere Services navigieren",
+    icon: Code,
   },
   {
     title: "Preise",
     url: "#pricing",
     ariaLabel: "Zu unseren Preisen navigieren",
+    icon: DollarSign,
   },
-  { title: "Über uns", url: "#about", ariaLabel: "Mehr über uns erfahren" },
-  { title: "Kontakt", url: "#contact", ariaLabel: "Kontakt aufnehmen" },
+  {
+    title: "Über uns",
+    url: "#about",
+    ariaLabel: "Mehr über uns erfahren",
+    icon: Users,
+  },
+  {
+    title: "Kontakt",
+    url: "#contact",
+    ariaLabel: "Kontakt aufnehmen",
+    icon: Phone,
+  },
 ];
 
 export function Navbar() {
@@ -50,9 +68,10 @@ export function Navbar() {
                   <li key={item.title}>
                     <a
                       href={item.url}
-                      className="text-text-primary hover:text-primary transition-colors text-base font-bold tracking-wide"
+                      className="text-text-primary hover:text-primary transition-colors text-base font-bold tracking-wide flex items-center gap-2"
                       aria-label={item.ariaLabel}
                     >
+                      <item.icon className="h-4 w-4" />
                       {item.title}
                     </a>
                   </li>
@@ -78,6 +97,7 @@ export function Navbar() {
                   className="flex flex-col items-center gap-1 text-text-primary hover:text-primary transition-colors text-xs font-bold tracking-wide"
                   aria-label={item.ariaLabel}
                 >
+                  <item.icon className="h-5 w-5" />
                   <span className="text-center">{item.title}</span>
                 </a>
               </li>
