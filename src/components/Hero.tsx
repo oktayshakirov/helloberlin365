@@ -99,7 +99,8 @@ export function Hero() {
   const renderDescription = (className: string) => (
     <p className={className}>
       Ihre Geschichte verdient Aufmerksamkeit – wir sorgen dafür. 365 Tage im
-      Jahr. Ob online oder offline – wir machen Ihre Marke sichtbar.
+      Jahr. Alles, was Ihre Marke sichtbar macht: Websites, Fotografie und
+      Print.
     </p>
   );
 
@@ -130,8 +131,8 @@ export function Hero() {
         <Glow variant="navbar" />
         <div className="container mx-auto relative z-10 px-4 sm:px-6 lg:px-8">
           {/* Mobile Layout */}
-          <div className="flex gap-4 py-4 lg:hidden items-center justify-center flex-col">
-            <div className="flex gap-2 flex-col">
+          <div className="flex gap-2 py-4 lg:hidden items-center justify-center flex-col">
+            <div className="flex gap-4 flex-col">
               {renderTitleMobile(
                 "text-5xl md:text-7xl max-w-2xl tracking-tighter text-center font-black"
               )}
@@ -140,7 +141,7 @@ export function Hero() {
               )}
             </div>
 
-            <div className="flex justify-center">{renderImage(250, 250)}</div>
+            <div className="flex justify-center">{renderImage(200, 200)}</div>
 
             <div className="flex flex-row gap-3">{renderButton()}</div>
           </div>
