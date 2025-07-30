@@ -8,6 +8,12 @@
   --color-primary-light: rgba(255, 255, 255, 0.559);
   --color-primary-glow: rgba(0, 145, 158, 0.3);
 
+  /* Glow Colors */
+  --color-glow-primary: rgba(20, 184, 166, 0.6);
+  --color-glow-secondary: rgba(13, 148, 136, 0.5);
+  --color-glow-primary-fade: rgba(20, 184, 166, 0);
+  --color-glow-secondary-fade: rgba(13, 148, 136, 0);
+
   /* Background Colors */
   --color-background-primary: #ffffff;
   --color-background-secondary: #f8f9fa;
@@ -52,13 +58,21 @@
   background-color: var(--color-surface-secondary);
   backdrop-filter: blur(16px);
   border: 1px solid var(--color-border-secondary);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
     0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 /* Custom gradient background */
 .bg-gradient-custom {
-  background: linear-gradient(to right, #ece9e6, #ffffff);
+  background: linear-gradient(
+    135deg,
+    #f8fafc 0%,
+    #e2e8f0 25%,
+    #cbd5e1 50%,
+    #afbdd1 75%,
+    #8a9cb4 100%
+  );
 }
 
 /* Semantic utility classes */
