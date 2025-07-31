@@ -10,7 +10,7 @@ export function Services() {
             Unsere Services
           </h2>
           <p className="text-xl text-text-secondary">
-            Professionelle Lösungen für Ihr Unternehmen
+            Wir machen Ihr Unternehmen stark – online, offline und überall.
           </p>
         </div>
 
@@ -20,12 +20,14 @@ export function Services() {
               <div className="mx-auto mb-4 p-3 bg-primary-light rounded-full w-fit">
                 <Code className="h-8 w-8 text-primary" />
               </div>
-              <CardTitle className="text-text-primary">Websites</CardTitle>
+              <CardTitle className="text-text-primary">
+                Webdesign & Entwicklung
+              </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-text-secondary text-center">
-                Design und Entwicklung moderner, responsiver Websites mit
-                Next.js und TypeScript.
+                Wir erstellen moderne, responsive Websites, die Ihr Unternehmen
+                optimal präsentieren und online sichtbar machen.
               </p>
             </CardContent>
           </Card>
@@ -35,12 +37,14 @@ export function Services() {
               <div className="mx-auto mb-4 p-3 bg-primary-light rounded-full w-fit">
                 <Camera className="h-8 w-8 text-primary" />
               </div>
-              <CardTitle className="text-text-primary">Fotografie</CardTitle>
+              <CardTitle className="text-text-primary">
+                Business-Fotografie
+              </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-text-secondary text-center">
-                Produktfotografie, Unternehmensfotografie (Standorte, Teams,
-                Events).
+                Hochwertige Produkt-, Team- und Locationfotos sowie
+                Eventaufnahmen, die Ihre Marke authentisch zeigen.
               </p>
             </CardContent>
           </Card>
@@ -54,7 +58,8 @@ export function Services() {
             </CardHeader>
             <CardContent>
               <p className="text-text-secondary text-center">
-                Visitenkarten, Speisekarten, Flyer, Merchandise.
+                Individuell gestaltete Visitenkarten, Flyer, Broschüren und
+                Preislisten, die Kunden überzeugen und Vertrauen schaffen.
               </p>
             </CardContent>
           </Card>
