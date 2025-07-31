@@ -108,7 +108,7 @@ export function Hero() {
     <Button
       variant="default"
       size="lg"
-      className="gap-4 font-semibold px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+      className="gap-4 font-semibold px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full lg:w-auto"
     >
       <Phone className="h-5 w-5" />
       <Link href="/#contact">Kontaktieren Sie uns</Link>
@@ -144,7 +144,7 @@ export function Hero() {
 
             <div className="flex justify-center">{renderImage(200, 200)}</div>
 
-            <div className="flex flex-row gap-3">{renderButton()}</div>
+            <div className="flex flex-row gap-3 w-full">{renderButton()}</div>
           </div>
 
           {/* Desktop Layout */}
