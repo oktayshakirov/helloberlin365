@@ -30,7 +30,7 @@ export function Hero() {
     <h1 className={className}>
       <span className="text-text-primary drop-shadow-lg">
         Hello Berlin{" "}
-        <span className="inline-block bg-primary text-white px-4 py-2 rounded-full font-bold shadow-lg">
+        <span className="inline-block bg-secondary text-white px-4 py-2 rounded-full font-bold shadow-lg">
           365
         </span>
       </span>
@@ -65,7 +65,7 @@ export function Hero() {
     <h1 className={className}>
       <span className="text-text-primary drop-shadow-lg">
         Hello Berlin{" "}
-        <span className="inline-block bg-primary text-white px-4 py-2 rounded-full font-bold shadow-lg">
+        <span className="inline-block bg-secondary text-white px-4 py-2 rounded-full font-bold shadow-lg">
           365
         </span>
       </span>
@@ -106,8 +106,9 @@ export function Hero() {
 
   const renderButton = () => (
     <Button
+      variant="default"
       size="lg"
-      className="gap-4 bg-primary hover:bg-primary-hover text-white font-semibold px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+      className="gap-4 font-semibold px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
     >
       <Phone className="h-5 w-5" />
       <Link href="/#contact">Kontaktieren Sie uns</Link>

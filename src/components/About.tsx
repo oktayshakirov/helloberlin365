@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Heart, Users, Zap, Globe, Linkedin, Instagram } from "lucide-react";
+import { Heart, Users, Globe, Linkedin, Instagram } from "lucide-react";
 
 export function About() {
   return (
@@ -116,42 +116,6 @@ export function About() {
                     </div>
                   </div>
                 </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-
-        <div className="mt-12">
-          <Card className="glass-card">
-            <CardHeader className="text-center">
-              <CardTitle className="text-text-primary flex items-center justify-center gap-2">
-                <Zap className="h-6 w-6 text-primary" />
-                Unsere Tools
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-text-secondary text-center mb-6">
-                Wir verwenden die neuesten Technologien für optimale Ergebnisse.
-              </p>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                {[
-                  { name: "Next.js", icon: "⚛️" },
-                  { name: "TypeScript", icon: "📘" },
-                  { name: "Figma", icon: "🎨" },
-                  { name: "Adobe CC", icon: "🖼️" },
-                  { name: "Tailwind CSS", icon: "🎯" },
-                  { name: "React", icon: "⚡" },
-                  { name: "Node.js", icon: "🟢" },
-                  { name: "Git", icon: "📝" },
-                ].map((tool) => (
-                  <div
-                    key={tool.name}
-                    className="text-center p-4 glass-card rounded-lg"
-                  >
-                    <div className="text-2xl mb-2">{tool.icon}</div>
-                    <p className="text-text-primary font-medium">{tool.name}</p>
-                  </div>
-                ))}
               </div>
             </CardContent>
           </Card>

@@ -108,7 +108,7 @@ export function Navbar() {
                           href={item.url}
                           className={`transition-colors text-base font-bold tracking-wide flex items-center gap-2 py-2 relative group ${
                             isActive
-                              ? "text-primary"
+                              ? "text-secondary"
                               : "text-text-primary hover:text-primary"
                           }`}
                           aria-label={item.ariaLabel}
@@ -116,7 +116,7 @@ export function Navbar() {
                           <item.icon className="h-4 w-4" />
                           {item.title}
                           <span
-                            className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300 ${
+                            className={`absolute -bottom-1 left-0 h-0.5 bg-secondary transition-all duration-300 ${
                               isActive ? "w-full" : "w-0 group-hover:w-full"
                             }`}
                           ></span>
@@ -161,7 +161,7 @@ export function Navbar() {
                     href={item.url}
                     className={`flex flex-col items-center gap-1 transition-colors text-xs font-bold tracking-wide ${
                       isActive
-                        ? "text-primary"
+                        ? "text-secondary"
                         : "text-text-primary hover:text-primary"
                     }`}
                     aria-label={item.ariaLabel}

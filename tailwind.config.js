@@ -15,6 +15,10 @@ const config = {
           light: "var(--color-primary-light)",
           glow: "var(--color-primary-glow)",
         },
+        secondary: {
+          DEFAULT: "var(--color-secondary)",
+          hover: "var(--color-secondary-hover)",
+        },
         background: {
           DEFAULT: "var(--background)",
           primary: "var(--color-background-primary)",

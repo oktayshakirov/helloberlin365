@@ -82,13 +82,14 @@ function PricingCard({ plan }: { plan: PricingPlan }) {
   return (
     <Card
       className={`relative glass-card transition-all duration-300 hover:scale-105 ${
-        plan.isPopular
-          ? "border-primary/50 shadow-[0_0_20px_var(--color-primary-glow)]"
-          : "border-border-secondary"
+        plan.isPopular ? "border-primary/50 " : "border-border-secondary"
       }`}
     >
       {plan.isPopular && (
-        <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 border-0">
+        <Badge
+          variant="secondary"
+          className="absolute -top-3 left-1/2 transform -translate-x-1/2 border-0"
+        >
           Am beliebtesten
         </Badge>
       )}

@@ -17,7 +17,7 @@ export function Services() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <Card className="glass-card hover:scale-105 transition-all duration-300">
             <CardHeader className="text-center">
-              <div className="mx-auto mb-4 p-3 bg-primary-light rounded-full w-fit">
+              <div className="mx-auto mb-4 p-3  rounded-full w-fit">
                 <Code className="h-8 w-8 text-primary" />
               </div>
               <CardTitle className="text-text-primary">
@@ -34,7 +34,7 @@ export function Services() {
 
           <Card className="glass-card hover:scale-105 transition-all duration-300">
             <CardHeader className="text-center">
-              <div className="mx-auto mb-4 p-3 bg-primary-light rounded-full w-fit">
+              <div className="mx-auto mb-4 p-3  rounded-full w-fit">
                 <Camera className="h-8 w-8 text-primary" />
               </div>
               <CardTitle className="text-text-primary">
@@ -51,7 +51,7 @@ export function Services() {
 
           <Card className="glass-card hover:scale-105 transition-all duration-300">
             <CardHeader className="text-center">
-              <div className="mx-auto mb-4 p-3 bg-primary-light rounded-full w-fit">
+              <div className="mx-auto mb-4 p-3  rounded-full w-fit">
                 <Printer className="h-8 w-8 text-primary" />
               </div>
               <CardTitle className="text-text-primary">Printmedien</CardTitle>

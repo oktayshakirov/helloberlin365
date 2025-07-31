@@ -3,10 +3,12 @@
 /* Semantic Color Tokens */
 :root {
   /* Brand Colors */
-  --color-primary: #9e0031;
-  --color-primary-hover: #7a0026;
-  --color-primary-light: rgba(255, 255, 255, 0.559);
-  --color-primary-glow: rgba(0, 145, 158, 0.3);
+  --color-primary: #444a6d;
+  --color-primary-hover: #525980;
+
+  /* Secondary Colors */
+  --color-secondary: #9e0031;
+  --color-secondary-hover: #7a0026;
 
   /* Glow Colors */
   --color-glow-primary: rgba(20, 184, 166, 0.6);
@@ -80,7 +82,7 @@
   color: var(--color-primary);
 }
 .text-secondary {
-  color: var(--color-text-secondary);
+  color: var(--color-secondary);
 }
 .text-tertiary {
   color: var(--color-text-tertiary);
@@ -100,6 +102,12 @@
 }
 .bg-primary-light {
   background-color: var(--color-primary-light);
+}
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+.bg-secondary-hover {
+  background-color: var(--color-secondary-hover);
 }
 .bg-surface-primary {
   background-color: var(--color-surface-primary);
