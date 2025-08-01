@@ -45,47 +45,47 @@ export function FeatureSteps({
   }, [progress, features.length, autoPlayInterval]);
 
   return (
-    <div className={cn("p-8 md:p-12", className)}>
+    <div className={cn("p-2 md:p-8", className)}>
       <div className="max-w-7xl mx-auto w-full">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-center text-text-primary">
+        <h2 className="text-4xl  font-bold mb-1 md:mb-4 text-center text-text-primary">
           {title}
         </h2>
         {description && (
-          <p className="text-xl text-text-secondary text-center mb-10">
+          <p className="text-xl text-text-secondary text-center mb-4 md:mb-10">
             {description}
           </p>
         )}
 
-        <div className="flex flex-col md:grid md:grid-cols-2 gap-6 md:gap-10">
-          <div className="order-2 md:order-1 space-y-8">
+        <div className="flex flex-col md:grid md:grid-cols-2 gap-4 md:gap-8 lg:gap-10">
+          <div className="order-2 md:order-1 space-y-6 md:space-y-8 lg:space-y-10">
             {features.map((feature, index) => (
               <motion.div
                 key={index}
-                className="flex items-center gap-6 md:gap-8"
+                className="flex items-center gap-4 md:gap-6 lg:gap-8"
                 initial={{ opacity: 0.3 }}
                 animate={{ opacity: index === currentFeature ? 1 : 0.3 }}
                 transition={{ duration: 0.5 }}
               >
                 <motion.div
                   className={cn(
-                    "w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center border-2",
+                    "w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 rounded-full flex items-center justify-center border-2 flex-shrink-0",
                     index === currentFeature
                       ? "bg-primary border-primary text-white scale-110"
                       : "bg-surface-secondary border-border-secondary text-text-secondary"
                   )}
                 >
                   {index <= currentFeature ? (
-                    <span className="text-lg font-bold">✓</span>
+                    <span className="text-sm md:text-lg font-bold">✓</span>
                   ) : (
                     <span className="text-lg font-semibold">{index + 1}</span>
                   )}
                 </motion.div>
 
-                <div className="flex-1">
-                  <h3 className="text-xl md:text-2xl font-semibold text-text-primary">
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-xl md:text-xl lg:text-2xl font-semibold text-text-primary">
                     {feature.title || feature.step}
                   </h3>
-                  <p className="text-sm md:text-lg text-text-secondary">
+                  <p className="text-sm md:text-sm lg:text-lg text-text-secondary">
                     {feature.content}
                   </p>
                 </div>

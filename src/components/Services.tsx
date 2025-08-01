@@ -26,7 +26,7 @@ export function Services() {
   ];
 
   return (
-    <section id="services" className=" px-4">
+    <section id="services" className="py-8 md:py-16 lg:py-20">
       <div className="max-w-7xl mx-auto">
         <FeatureSteps
           features={features}
