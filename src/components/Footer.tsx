@@ -1,9 +1,11 @@
 import { Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
+import { Glow } from "@/components/ui/glow";
 
 export function Footer() {
   return (
-    <footer className="glass backdrop-blur-md border-t border-border-secondary">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <footer className="glass backdrop-blur-md border-t border-border-secondary relative overflow-hidden">
+      <Glow variant="footer" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="space-y-4">
             <h3 className="text-xl font-bold text-text-primary">
