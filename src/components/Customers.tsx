@@ -6,6 +6,10 @@ import {
   Building2,
   Sparkles,
   Briefcase,
+  Dumbbell,
+  Scale,
+  Truck,
+  Heart,
 } from "lucide-react";
 
 interface TargetCustomer {
@@ -38,9 +42,25 @@ const customers: TargetCustomer[] = [
     title: "Makler",
     icon: <Briefcase className="h-8 w-8 text-primary" />,
   },
+  {
+    title: "Sport",
+    icon: <Dumbbell className="h-8 w-8 text-primary" />,
+  },
+  {
+    title: "Anwälte",
+    icon: <Scale className="h-8 w-8 text-primary" />,
+  },
+  {
+    title: "Transporte",
+    icon: <Truck className="h-8 w-8 text-primary" />,
+  },
+  {
+    title: "Kosmetik",
+    icon: <Heart className="h-8 w-8 text-primary" />,
+  },
 ];
 
-export function TargetCustomers() {
+export function Customers() {
   return (
     <section className="py-16 px-4">
       <div className="max-w-7xl mx-auto">
@@ -54,7 +74,7 @@ export function TargetCustomers() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+        <div className="grid grid-cols-5 gap-6">
           {customers.map((customer, index) => (
             <Card
               key={index}
