@@ -34,7 +34,7 @@ export function Hero() {
           365
         </span>
       </span>
-      <span className="relative flex w-full justify-center overflow-hidden">
+      <span className="relative py-2 flex w-full justify-center overflow-hidden">
         &nbsp;
         {slogans.map((slogan, index) => (
           <motion.span
@@ -69,7 +69,7 @@ export function Hero() {
           365
         </span>
       </span>
-      <span className="relative flex w-full overflow-hidden">
+      <span className="relative py-2 flex w-full overflow-hidden">
         &nbsp;
         {slogans.map((slogan, index) => (
           <motion.span
@@ -108,7 +108,7 @@ export function Hero() {
     <Button
       variant="default"
       size="lg"
-      className="gap-4 font-semibold px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full lg:w-auto"
+      className="gap-4 mt-2 font-semibold px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full lg:w-auto"
     >
       <Phone className="h-5 w-5" />
       <Link href="/#contact">Kontaktieren Sie uns</Link>

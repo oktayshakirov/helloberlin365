@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Send, Mail, Phone } from "lucide-react";
+import { Send } from "lucide-react";
 import { sendEmail } from "@/app/actions";
 import { useActionState } from "react";
 
@@ -21,7 +21,7 @@ export function Contact() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="w-full">
           <Card className="glass-card">
             <CardHeader>
               <CardTitle className="text-text-primary flex items-center gap-2">
@@ -41,25 +41,27 @@ export function Contact() {
                     {state.success}
                   </div>
                 )}
-                <div className="space-y-2">
-                  <label className="text-text-primary">Name</label>
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Ihr Name"
-                    required
-                    className="w-full p-3 rounded-lg bg-surface-primary border border-border-primary text-text-primary placeholder-text-muted"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-text-primary">E-Mail</label>
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="ihre.email@beispiel.com"
-                    required
-                    className="w-full p-3 rounded-lg bg-surface-primary border border-border-primary text-text-primary placeholder-text-muted"
-                  />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <label className="text-text-primary">Name</label>
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="Ihr Name"
+                      required
+                      className="w-full p-3 rounded-lg bg-surface-primary border border-border-primary text-text-primary placeholder-text-muted"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-text-primary">E-Mail</label>
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="ihre.email@beispiel.com"
+                      required
+                      className="w-full p-3 rounded-lg bg-surface-primary border border-border-primary text-text-primary placeholder-text-muted"
+                    />
+                  </div>
                 </div>
                 <div className="space-y-2">
                   <label className="text-text-primary">Nachricht</label>
@@ -77,32 +79,6 @@ export function Contact() {
               </form>
             </CardContent>
           </Card>
-
-          <div className="space-y-6">
-            <div className="glass-card p-6">
-              <h3 className="text-xl font-semibold text-text-primary mb-4">
-                Kontakt aufnehmen
-              </h3>
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <Mail className="h-5 w-5 text-primary" />
-                  <div>
-                    <p className="text-text-primary font-medium">E-Mail</p>
-                    <p className="text-text-secondary">
-                      info@helloberlin365.com
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Phone className="h-5 w-5 text-primary" />
-                  <div>
-                    <p className="text-text-primary font-medium">Telefon</p>
-                    <p className="text-text-secondary">+49 30 12345678</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>

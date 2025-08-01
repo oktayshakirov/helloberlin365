@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Check } from "lucide-react";
+import { Check, Globe, Camera, Printer, Palette } from "lucide-react";
 
 interface PricingPlan {
   title: string;
@@ -9,71 +9,80 @@ interface PricingPlan {
   isPopular?: boolean;
   salePrice?: string;
   currencySymbol?: string;
+  description?: string;
 }
 
 const pricingPlans: PricingPlan[] = [
   {
     title: "Hello Start",
-    price: "1599",
+    price: "1999",
     salePrice: "1099",
     currencySymbol: "€",
+    description: "Ihr professioneller Start im Web.",
     features: [
-      "One-Pager, 1 Startseite",
-      "2 Textseiten (Rechtliches)",
-      "Optimiert auf allen Endgeräten",
-      "Inklusive Domain und Hosting",
-      "Inklusive Design",
-      "Visitenkarten",
-      "Werbeflyer",
-      "Keyword-Recherche und -Optimierung",
-      "Technische SEO / Optimierung und Pagespeed",
-      "15 Fotos",
-      "Product oder Locationfotos",
-      "Grundbearbeitung & Weboptimierung",
+      "Webseite",
+      "One-Pager (1 Startseite, bis zu 5 Sektionen)",
+      "2 rechtliche Seiten (Impressum & Datenschutz)",
+      "Responsives Design für alle Endgeräte",
+      "Individuelles Design",
+      "Domain & Hosting inklusive (1 Jahr)",
+      "Keyword-Recherche & -Optimierung",
+      "Technische SEO & Pagespeed-Optimierung",
+      "Einsprachigkeit (z. B. nur DE)",
+      "Fotografie",
+      "15 Fotos (Produkte oder Location)",
+      "Bildbearbeitung & Weboptimierung",
+      "Print & Medien",
+      "100 Visitenkarten (Design & Druck)",
     ],
   },
   {
     title: "Hello Pro",
-    price: "2499",
+    price: "2999",
     salePrice: "1799",
     currencySymbol: "€",
     isPopular: true,
+    description: "Mehr Details für mehr Wachstum.",
     features: [
-      "1 Startseite",
-      "Mehrere gestaltete Unterseiten",
-      "Optimiert auf allen Endgeräten",
-      "Inklusive Domain und Hosting",
-      "Inklusive Design",
-      "Visitenkarten",
-      "Werbeflyer",
-      "Keyword-Recherche und -Optimierung",
-      "Technische SEO / Optimierung und Pagespeed",
-      "50 Fotos",
-      "Locationfotos",
-      "Produktfotos",
+      "Webseite",
+      "Startseite + bis zu 4 gestaltete Unterseiten",
+      "2 rechtliche Seiten (Impressum & Datenschutz)",
+      "Responsives Design für alle Endgeräte",
+      "Individuelles Webdesign",
+      "Domain & Hosting inklusive (1 Jahr)",
+      "Keyword-Recherche & -Optimierung",
+      "Technische SEO & Pagespeed-Optimierung",
+      "Einsprachigkeit (z. B. nur DE)",
+      "Fotografie",
+      "40 Fotos (Produkte & Location)",
+      "Bildbearbeitung & Weboptimierung",
+      "Print & Medien",
+      "250 Visitenkarten (Design & Druck)",
+      "Flyer oder Preislisten (Design)",
     ],
   },
   {
     title: "Hello VIP",
-    price: "3999",
+    price: "4899",
     salePrice: "2999",
     currencySymbol: "€",
+    description: "Die Premium-Lösung für Ihre Marke.",
     features: [
-      "1 Startseite",
-      "Unterseiten auf Wunsch",
-      "Optimiert auf allen Endgeräten",
-      "Inklusive Domain und Hosting",
-      "Inklusive Design",
-      "Visitenkarten",
-      "Werbeflyer",
-      "Keyword-Recherche und -Optimierung",
-      "Technische SEO / Optimierung und Pagespeed",
-      "100 Fotos",
-      "Locationfotos",
-      "Produktfotos",
-      "Einzelne Personenfotos",
-      "Team/Gruppen Fotografie",
-      "Erstellung von Social Media Profilen",
+      "Webseite",
+      "Startseite + bis zu 7 gestaltete Unterseiten",
+      "Alle notwendigen rechtlichen Seiten",
+      "Responsives Design für alle Endgeräte",
+      "Individuelles Premium-Webdesign",
+      "Domain & Hosting inklusive (1 Jahr)",
+      "Keyword-Recherche & -Optimierung",
+      "Technische SEO & Pagespeed-Optimierung",
+      "Mehrsprachigkeit (z. B. DE/EN/TR)",
+      "Fotografie",
+      "100 Fotos (Produkte, Location, Team & Portraits)",
+      "Bildbearbeitung & Weboptimierung",
+      "Print & Medien",
+      "500 Visitenkarten (Design & Druck)",
+      "Flyer oder Preislisten (Design & Druck)",
     ],
   },
 ];
@@ -90,7 +99,7 @@ function PricingCard({ plan }: { plan: PricingPlan }) {
           variant="secondary"
           className="absolute -top-3 left-1/2 transform -translate-x-1/2 border-0"
         >
-          Am beliebtesten
+          🔥 Am beliebtesten
         </Badge>
       )}
 
@@ -98,6 +107,9 @@ function PricingCard({ plan }: { plan: PricingPlan }) {
         <CardTitle className="text-2xl font-bold text-text-primary">
           {plan.title}
         </CardTitle>
+        {plan.description && (
+          <p className="text-sm text-text-secondary mb-2">{plan.description}</p>
+        )}
         <div className="flex items-center justify-center gap-2">
           <span className="text-3xl font-bold text-primary">
             {plan.currencySymbol}
@@ -114,8 +126,42 @@ function PricingCard({ plan }: { plan: PricingPlan }) {
         <ul className="space-y-3">
           {plan.features.map((feature, index) => (
             <li key={index} className="flex items-center gap-3">
-              <Check className="h-5 w-5 text-primary flex-shrink-0" />
-              <span className="text-text-primary text-sm">{feature}</span>
+              {feature === "" ? (
+                <div className="h-px bg-border-secondary flex-grow my-2"></div>
+              ) : feature.startsWith("Branding & Design") ? (
+                <div className="flex items-center gap-2">
+                  <Palette className="h-4 w-4 text-primary flex-shrink-0" />
+                  <span className="text-text-primary text-sm font-semibold">
+                    {feature}
+                  </span>
+                </div>
+              ) : feature.startsWith("Webseite") ? (
+                <div className="flex items-center gap-2">
+                  <Globe className="h-4 w-4 text-primary flex-shrink-0" />
+                  <span className="text-text-primary text-sm font-semibold">
+                    {feature}
+                  </span>
+                </div>
+              ) : feature.startsWith("Fotografie") ? (
+                <div className="flex items-center gap-2">
+                  <Camera className="h-4 w-4 text-primary flex-shrink-0" />
+                  <span className="text-text-primary text-sm font-semibold">
+                    {feature}
+                  </span>
+                </div>
+              ) : feature.startsWith("Print & Medien") ? (
+                <div className="flex items-center gap-2">
+                  <Printer className="h-4 w-4 text-primary flex-shrink-0" />
+                  <span className="text-text-primary text-sm font-semibold">
+                    {feature}
+                  </span>
+                </div>
+              ) : (
+                <>
+                  <Check className="h-5 w-5 text-primary flex-shrink-0" />
+                  <span className="text-text-primary text-sm">{feature}</span>
+                </>
+              )}
             </li>
           ))}
         </ul>

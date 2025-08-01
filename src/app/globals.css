@@ -1,5 +1,22 @@
 @import "tailwindcss";
 
+/* iOS specific overscroll fix */
+@supports (-webkit-touch-callout: none) {
+  html,
+  body {
+    background-attachment: fixed;
+  }
+}
+
+/* Prevent pull-to-refresh on mobile */
+html {
+  overscroll-behavior: none;
+}
+
+body {
+  overscroll-behavior: none;
+}
+
 /* Semantic Color Tokens */
 :root {
   /* Brand Colors */
