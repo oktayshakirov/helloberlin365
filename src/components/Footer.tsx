@@ -1,5 +1,5 @@
-import { Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
 import { Glow } from "@/components/ui/glow";
+import { Socials } from "@/components/ui/socials";
 
 export function Footer() {
   return (
@@ -58,32 +58,7 @@ export function Footer() {
             <h4 className="text-lg font-semibold text-text-primary">
               Folgen Sie uns
             </h4>
-            <div className="flex space-x-4">
-              <a
-                href="#"
-                className="text-text-secondary hover:text-primary transition-colors"
-              >
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a
-                href="https://www.instagram.com/helloberlin365/"
-                className="text-text-secondary hover:text-primary transition-colors"
-              >
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a
-                href="#"
-                className="text-text-secondary hover:text-primary transition-colors"
-              >
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a
-                href="#"
-                className="text-text-secondary hover:text-primary transition-colors"
-              >
-                <Linkedin className="h-5 w-5" />
-              </a>
-            </div>
+            <Socials />
           </div>
         </div>
         <div className="border-t border-border-secondary mt-8 pt-8 text-center">

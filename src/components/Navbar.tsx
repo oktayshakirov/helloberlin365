@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Home, Code, DollarSign, Users, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Socials } from "@/components/ui/socials";
 import { useEffect, useState } from "react";
 
 const navigation = [
@@ -127,7 +128,8 @@ export function Navbar() {
               </ul>
             </div>
 
-            <div className="flex items-center">
+            <div className="flex items-center gap-4">
+              <Socials className="hidden lg:flex" />
               {navigation
                 .filter((item) => item.title === "Kontakt")
                 .map((item) => (
