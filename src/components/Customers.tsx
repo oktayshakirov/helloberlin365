@@ -62,10 +62,10 @@ const customers: TargetCustomer[] = [
 
 export function Customers() {
   return (
-    <section className="py-16 px-4">
+    <section className="py-8 md:py-16 px-4">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-text-primary mb-4">
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-4xl font-bold text-text-primary mb-2 md:mb-4">
             Unsere Zielgruppen
           </h2>
           <p className="text-xl text-text-secondary">
@@ -74,15 +74,15 @@ export function Customers() {
           </p>
         </div>
 
-        <div className="grid grid-cols-5 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-6">
           {customers.map((customer, index) => (
             <Card
               key={index}
               className="glass-card hover:scale-105 transition-all duration-300 cursor-pointer"
             >
-              <CardContent className="flex flex-col items-center justify-center p-6 text-center space-y-4">
+              <CardContent className="flex flex-col items-center justify-center p-3 md:p-6 text-center space-y-2 md:space-y-4">
                 <div className="text-primary">{customer.icon}</div>
-                <h3 className="text-text-primary font-semibold text-sm md:text-base">
+                <h3 className="text-text-primary font-semibold text-xs md:text-sm lg:text-base">
                   {customer.title}
                 </h3>
               </CardContent>
