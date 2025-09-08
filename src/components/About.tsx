@@ -135,15 +135,15 @@ export function About() {
                   <div className="flex-1 text-center sm:text-left">
                     <div className="mb-3">
                       <p className="text-text-primary font-semibold text-lg">
-                        Das könnte Sie sein!
+                        Das könntest du sein!
                       </p>
                       <p className="text-text-secondary">
                         Unser Team sucht Verstärkung
                       </p>
                     </div>
                     <p className="text-text-secondary text-sm">
-                      Haben Sie Lust, Teil unseres wachsenden Teams zu werden?
-                      Wir suchen talentierte Menschen. Kontaktieren Sie uns!
+                      Hast du Lust, Teil unseres wachsenden Teams zu werden? Wir
+                      suchen talentierte Menschen. Kontaktiere uns!
                     </p>
                   </div>
                 </div>
