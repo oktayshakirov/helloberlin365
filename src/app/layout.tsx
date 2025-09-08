@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import GoogleAnalytics from "@/utils/GoogleAnalytics";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,6 +19,7 @@ export default function RootLayout({
   return (
     <html lang="de" suppressHydrationWarning>
       <body className={`${inter.className} bg-gradient-custom min-h-screen`}>
+        <GoogleAnalytics />
         {children}
       </body>
     </html>
