@@ -98,9 +98,11 @@ export function Hero() {
 
   const renderDescription = (className: string) => (
     <p className={className}>
-      Ihre Geschichte verdient Aufmerksamkeit – wir sorgen dafür. 365 Tage im
-      Jahr. Alles, was Ihre Marke sichtbar macht: Websites, Fotografie und
-      Print.
+      Ihre Geschichte verdient Aufmerksamkeit – wir sorgen dafür mit
+      professionellem Webdesign, Business-Fotografie und Printdesign. Als lokale
+      Digitalagentur unterstützen wir Berliner Unternehmen dabei, online und
+      offline erfolgreich zu sein. 365 Tage im Jahr für Startups, Friseure,
+      Restaurants, Anwälte und alle Branchen.
     </p>
   );
 
@@ -118,7 +120,7 @@ export function Hero() {
   const renderImage = (width: number, height: number, className?: string) => (
     <Image
       src="/images/hero.webp"
-      alt="Laptop, DSLR camera, and pen holder setup"
+      alt="Laptop, DSLR Kamera und Büroausstattung für Webdesign und Fotografie Services in Berlin"
       width={width}
       height={height}
       priority
@@ -138,7 +140,7 @@ export function Hero() {
                 "text-5xl md:text-7xl max-w-2xl tracking-tighter text-center font-black"
               )}
               {renderDescription(
-                "text-lg md:text-xl leading-relaxed tracking-tight text-text-secondary max-w-2xl text-center"
+                "text-sm md:text-lg leading-relaxed tracking-tight text-text-secondary max-w-2xl text-center"
               )}
             </div>
 

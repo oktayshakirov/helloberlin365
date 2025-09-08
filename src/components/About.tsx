@@ -8,7 +8,7 @@ export function About() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-text-primary mb-4">
-            Über uns
+            Über Hello Berlin 365
           </h2>
         </div>
 
@@ -49,7 +49,7 @@ export function About() {
                   <Avatar className="h-20 w-20 flex-shrink-0">
                     <AvatarImage
                       src="/images/avatar-oktay.jpg"
-                      alt="Oktay Shakirov"
+                      alt="Oktay Shakirov, Softwareentwickler für Webdesign bei Hello Berlin 365"
                     />
                     <AvatarFallback className="bg-primary text-text-primary">
                       OS
@@ -88,7 +88,7 @@ export function About() {
                   <Avatar className="h-20 w-20 flex-shrink-0">
                     <AvatarImage
                       src="/images/avatar-mustafa.jpg"
-                      alt="Mustafa Mustafov"
+                      alt="Mustafa Mustafov, professioneller Fotograf für Business-Fotografie"
                     />
                     <AvatarFallback className="bg-primary text-text-primary">
                       MM

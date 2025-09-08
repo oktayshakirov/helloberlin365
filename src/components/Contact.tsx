@@ -17,7 +17,8 @@ export function Contact() {
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-text-primary mb-4">Kontakt</h2>
           <p className="text-xl text-text-secondary">
-            Lassen Sie uns über Ihr Projekt sprechen
+            Lassen Sie uns über Ihr Webdesign, Fotografie oder Printdesign
+            Projekt sprechen
           </p>
         </div>
 

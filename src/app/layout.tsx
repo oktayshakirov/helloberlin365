@@ -2,13 +2,54 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import GoogleAnalytics from "@/utils/GoogleAnalytics";
+import { SEOSchema } from "@/components/SEOSchema";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Hello Berlin 365 - Ihre Kreativagentur",
+  title: "Hello Berlin 365 | Webdesign, Fotografie & Print in Berlin",
   description:
-    "Professionelle Webentwicklung, Fotografie und Printmedien in Berlin. Ihre Marke. Unsere Mission. Jeden Tag.",
+    "Professionelle Webseiten, Business-Fotografie und Printdesign in Berlin. 365 Tage Service für Startups, Friseure, Gastronomie & mehr. Jetzt anfragen!",
+  keywords:
+    "webdesign berlin, business fotografie berlin, printdesign berlin, digitalagentur berlin, webentwicklung berlin, werbeagentur berlin",
+  authors: [{ name: "Hello Berlin 365" }],
+  creator: "Hello Berlin 365",
+  publisher: "Hello Berlin 365",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL("https://helloberlin365.de"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Hello Berlin 365 | Webdesign, Fotografie & Print in Berlin",
+    description:
+      "Professionelle Webseiten, Business-Fotografie und Printdesign in Berlin. 365 Tage Service für Startups, Friseure, Gastronomie & mehr.",
+    url: "https://helloberlin365.de",
+    siteName: "Hello Berlin 365",
+    locale: "de_DE",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Hello Berlin 365 | Webdesign, Fotografie & Print in Berlin",
+    description:
+      "Professionelle Webseiten, Business-Fotografie und Printdesign in Berlin. 365 Tage Service für lokale Unternehmen.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   icons: {
     icon: [
       { url: "/favicon/favicon-16x16.png", sizes: "16x16", type: "image/png" },
@@ -49,6 +90,7 @@ export default function RootLayout({
     <html lang="de" suppressHydrationWarning>
       <body className={`${inter.className} bg-gradient-custom min-h-screen`}>
         <GoogleAnalytics />
+        <SEOSchema />
         {children}
       </body>
     </html>

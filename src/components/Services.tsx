@@ -3,24 +3,24 @@ import { FeatureSteps } from "@/components/ui/carousel";
 export function Services() {
   const features = [
     {
-      step: "Webdesign & Entwicklung",
-      title: "Webdesign & Entwicklung",
+      step: "Webdesign & Entwicklung Berlin",
+      title: "Webdesign & Entwicklung Berlin",
       content:
-        "Wir erstellen moderne, responsive Websites, die Ihr Unternehmen optimal präsentieren und online sichtbar machen.",
+        "Moderne, responsive Websites mit WordPress und individuellem Design. SEO-optimiert und mobilfreundlich für alle Unternehmen.",
       image: "/images/website.jpg",
     },
     {
-      step: "Business-Fotografie",
-      title: "Business-Fotografie",
+      step: "Business-Fotografie Berlin",
+      title: "Business-Fotografie Berlin",
       content:
-        "Hochwertige Produkt-, Team- und Locationfotos sowie Eventaufnahmen, die Ihre Marke authentisch zeigen.",
+        "Professionelle Produktfotografie, Teamfotos und Businessporträts. Authentische Bilder für Website, Social Media und Printmedien.",
       image: "/images/photography.jpg",
     },
     {
-      step: "Printmedien",
-      title: "Printmedien",
+      step: "Printdesign Berlin",
+      title: "Printdesign Berlin",
       content:
-        "Individuell gestaltete Visitenkarten, Flyer, Broschüren und Preislisten, die Kunden überzeugen und Vertrauen schaffen.",
+        "Individuell gestaltete Visitenkarten, Flyer, Broschüren und Preislisten. Kreative Gestaltung für professionellen ersten Eindruck.",
       image: "/images/printmedia.jpg",
     },
   ];

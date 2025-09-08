@@ -176,10 +176,11 @@ export function Pricing() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-text-primary mb-4">
-            Unsere Preise
+            Transparente Preise
           </h2>
           <p className="text-xl text-text-secondary">
-            Transparente Preise für jeden Bedarf
+            Transparente Preise für Webdesign, Fotografie und Printdesign in
+            Berlin - für jeden Bedarf das richtige Paket
           </p>
         </div>
 
