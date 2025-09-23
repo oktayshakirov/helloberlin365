@@ -6,13 +6,13 @@ export function SEOSchema() {
     "@type": "LocalBusiness",
     "@id": "https://helloberlin365.de/#organization",
     name: "Hello Berlin 365",
-    alternateName: "Hello Berlin 365 - Webdesign & Fotografie",
+    alternateName: "Hello Berlin 365 - Webentwicklung & Fotografie",
     description:
-      "Professionelle Webdesign, Business-Fotografie und Printdesign Services in Berlin. Spezialisiert auf lokale Unternehmen und Startups.",
+      "Professionelle Webentwicklung, Business-Fotografie und Printdesign Services in Berlin. Spezialisiert auf lokale Unternehmen und Startups.",
     url: "https://helloberlin365.de",
     telephone: "+49-XXX-XXXXXXX",
     email: "info@helloberlin365.de",
-    foundingDate: "2024",
+    foundingDate: "2025",
     areaServed: {
       "@type": "City",
       name: "Berlin",

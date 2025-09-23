@@ -49,7 +49,7 @@ export function About() {
                   <Avatar className="h-20 w-20 flex-shrink-0">
                     <AvatarImage
                       src="/images/avatar-oktay.jpg"
-                      alt="Oktay Shakirov, Softwareentwickler für Webdesign bei Hello Berlin 365"
+                      alt="Oktay Shakirov, Softwareentwickler und Webentwicklung bei Hello Berlin 365"
                     />
                     <AvatarFallback className="bg-primary text-text-primary">
                       OS

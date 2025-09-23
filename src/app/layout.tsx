@@ -7,11 +7,11 @@ import { SEOSchema } from "@/components/SEOSchema";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Hello Berlin 365 | Webdesign, Fotografie & Print in Berlin",
+  title: "Hello Berlin 365 | Webentwicklung, Fotografie & Print in Berlin",
   description:
     "Professionelle Webseiten, Business-Fotografie und Printdesign in Berlin. 365 Tage Service für Startups, Friseure, Gastronomie & mehr. Jetzt anfragen!",
   keywords:
-    "webdesign berlin, business fotografie berlin, printdesign berlin, digitalagentur berlin, webentwicklung berlin, werbeagentur berlin",
+    "Webentwicklung berlin, business fotografie berlin, printdesign berlin, digitalagentur berlin, webentwicklung berlin, werbeagentur berlin",
   authors: [{ name: "Hello Berlin 365" }],
   creator: "Hello Berlin 365",
   publisher: "Hello Berlin 365",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Hello Berlin 365 | Webdesign, Fotografie & Print in Berlin",
+    title: "Hello Berlin 365 | Webentwicklung, Fotografie & Print in Berlin",
     description:
       "Professionelle Webseiten, Business-Fotografie und Printdesign in Berlin. 365 Tage Service für Startups, Friseure, Gastronomie & mehr.",
     url: "https://helloberlin365.de",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hello Berlin 365 | Webdesign, Fotografie & Print in Berlin",
+    title: "Hello Berlin 365 | Webentwicklung, Fotografie & Print in Berlin",
     description:
       "Professionelle Webseiten, Business-Fotografie und Printdesign in Berlin. 365 Tage Service für lokale Unternehmen.",
   },

@@ -70,7 +70,7 @@ export function Customers() {
           </h2>
           <p className="text-xl text-text-secondary">
             Wir unterstützen verschiedene Branchen mit maßgeschneiderten
-            Webdesign, Fotografie und Printlösungen
+            Webentwicklung, Fotografie und Printlösungen
           </p>
         </div>
 
