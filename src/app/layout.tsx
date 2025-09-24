@@ -32,12 +32,21 @@ export const metadata: Metadata = {
     siteName: "Hello Berlin 365",
     locale: "de_DE",
     type: "website",
+    images: [
+      {
+        url: "/images/meta-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Hello Berlin 365 - Webentwicklung, Fotografie & Print in Berlin",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Hello Berlin 365 | Webentwicklung, Fotografie & Print in Berlin",
     description:
       "Professionelle Webseiten, Business-Fotografie und Printdesign in Berlin. 365 Tage Service für lokale Unternehmen.",
+    images: ["/images/meta-image.jpg"],
   },
   robots: {
     index: true,
