@@ -35,8 +35,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/images/meta-image.jpg",
-        width: 1200,
-        height: 630,
+        width: 1024,
+        height: 500,
         alt: "Hello Berlin 365 - Webentwicklung, Fotografie & Print in Berlin",
       },
     ],
