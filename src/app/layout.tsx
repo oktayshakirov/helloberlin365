@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://helloberlin365.de"),
+  metadataBase: new URL("https://helloberlin365.com"),
   alternates: {
     canonical: "/",
   },
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     title: "Hello Berlin 365 | Webentwicklung, Fotografie & Print in Berlin",
     description:
       "Professionelle Webseiten, Business-Fotografie und Printdesign in Berlin. 365 Tage Service für Startups, Friseure, Gastronomie & mehr.",
-    url: "https://helloberlin365.de",
+    url: "https://helloberlin365.com",
     siteName: "Hello Berlin 365",
     locale: "de_DE",
     type: "website",

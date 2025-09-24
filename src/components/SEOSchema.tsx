@@ -4,14 +4,13 @@ export function SEOSchema() {
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://helloberlin365.de/#organization",
+    "@id": "https://helloberlin365.com/#organization",
     name: "Hello Berlin 365",
     alternateName: "Hello Berlin 365 - Webentwicklung & Fotografie",
     description:
       "Professionelle Webentwicklung, Business-Fotografie und Printdesign Services in Berlin. Spezialisiert auf lokale Unternehmen und Startups.",
-    url: "https://helloberlin365.de",
-    telephone: "+49-XXX-XXXXXXX",
-    email: "info@helloberlin365.de",
+    url: "https://helloberlin365.com",
+    email: "info@helloberlin365.com",
     foundingDate: "2025",
     areaServed: {
       "@type": "City",
