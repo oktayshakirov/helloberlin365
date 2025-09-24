@@ -30,7 +30,7 @@ export function Socials({ className }: SocialsProps) {
         </svg>
       </a>
       <a
-        href="https://www.tiktok.com/@helloberlin365"
+        href="https://www.tiktok.com/@helloberlin365.com"
         className="text-text-secondary hover:text-primary transition-colors"
       >
         <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
