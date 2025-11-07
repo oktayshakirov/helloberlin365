@@ -15,6 +15,7 @@ export default function HomePage() {
       <Services />
       <Customers />
       <Pricing />
+      <About />
       <Contact />
       <Footer />
     </div>

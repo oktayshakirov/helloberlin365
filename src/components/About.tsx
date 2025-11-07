@@ -84,7 +84,7 @@ export function About() {
                     </div>
                   </div>
                 </div>
-                <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-3 sm:space-y-0 sm:space-x-4">
+                {/* <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-3 sm:space-y-0 sm:space-x-4">
                   <Avatar className="h-20 w-20 flex-shrink-0">
                     <AvatarImage
                       src="/images/avatar-mustafa.jpg"
@@ -120,9 +120,9 @@ export function About() {
                       >
                         <Instagram className="h-5 w-5" />
                       </a>
-                    </div>
-                  </div>
-                </div>
+                    </div> */}
+                {/* </div> */}
+                {/* </div> */}
               </div>
 
               <div className="mt-8 pt-6 border-t border-border-secondary">
