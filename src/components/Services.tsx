@@ -3,22 +3,22 @@ import { FeatureSteps } from "@/components/ui/carousel";
 export function Services() {
   const features = [
     {
-      step: "Webdesign & Entwicklung Berlin",
-      title: "Webdesign & Entwicklung Berlin",
+      step: "Webdesign & Entwicklung",
+      title: "Webdesign & Entwicklung",
       content:
         "Moderne, responsive Websites mit WordPress und individuellem Design. SEO-optimiert und mobilfreundlich für alle Unternehmen.",
       image: "/images/website.jpg",
     },
     {
-      step: "Business-Fotografie Berlin",
-      title: "Business-Fotografie Berlin",
+      step: "Drohnenfoto & Drohnenvideo",
+      title: "Drohnenfoto & Drohnenvideo",
       content:
-        "Professionelle Produktfotografie, Teamfotos und Businessporträts. Authentische Bilder für Website, Social Media und Printmedien.",
-      image: "/images/photography.jpg",
+        "Professionelle Luftaufnahmen und Drohnenvideos für Ihr Unternehmen. Ideal für Website, Social Media, Immobilien, Events und Printmedien.",
+      image: "/images/drone.jpg",
     },
     {
-      step: "Printdesign Berlin",
-      title: "Printdesign Berlin",
+      step: "Printdesign",
+      title: "Printdesign",
       content:
         "Individuell gestaltete Visitenkarten, Flyer, Broschüren und Preislisten. Kreative Gestaltung für professionellen ersten Eindruck.",
       image: "/images/printmedia.jpg",
@@ -31,7 +31,7 @@ export function Services() {
         <FeatureSteps
           features={features}
           title="Unsere Services"
-          description="Wir machen Ihr Unternehmen stark – online, offline und überall."
+          description="Wir machen Ihr Unternehmen stark - online, offline und überall."
           className="bg-transparent"
         />
       </div>

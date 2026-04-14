@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Home, Code, DollarSign, Users, Phone } from "lucide-react";
+import { Home, Code, Layers, Users, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Socials } from "@/components/ui/socials";
 import { useEffect, useState } from "react";
@@ -20,10 +20,10 @@ const navigation = [
     icon: Code,
   },
   {
-    title: "Preise",
-    url: "#pricing",
-    ariaLabel: "Zu unseren Preisen navigieren",
-    icon: DollarSign,
+    title: "Angebote",
+    url: "#angebote",
+    ariaLabel: "Zu unseren Angeboten navigieren",
+    icon: Layers,
   },
   {
     title: "Über uns",

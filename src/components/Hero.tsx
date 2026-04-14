@@ -99,7 +99,8 @@ export function Hero() {
   const renderDescription = (className: string) => (
     <p className={className}>
       Ihre Geschichte verdient Aufmerksamkeit – wir sorgen dafür mit
-      professionellem Webentwicklung, Business-Fotografie und Printdesign. Als
+      professioneller Webentwicklung, Drohnenfoto & Drohnenvideo und
+      Printdesign. Als
       lokale Digitalagentur unterstützen wir Berliner Unternehmen dabei, online
       und offline erfolgreich zu sein. 365 Tage im Jahr für Startups, Friseure,
       Restaurants, Anwälte und alle Branchen.
@@ -120,7 +121,7 @@ export function Hero() {
   const renderImage = (width: number, height: number, className?: string) => (
     <Image
       src="/images/hero.webp"
-      alt="Laptop, DSLR Kamera und Büroausstattung für Webentwicklung und Fotografie Services in Berlin"
+      alt="Laptop, Drohne und Büroausstattung für Webentwicklung und Drohnenservices in Berlin"
       width={width}
       height={height}
       priority

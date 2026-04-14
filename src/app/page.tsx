@@ -2,8 +2,8 @@ import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { Customers } from "@/components/Customers";
 import { Services } from "@/components/Services";
-import { Pricing } from "@/components/Pricing";
-// import { About } from "@/components/About";
+import { Offerings } from "@/components/Offerings";
+import { About } from "@/components/About";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 
@@ -14,8 +14,8 @@ export default function HomePage() {
       <Hero />
       <Services />
       <Customers />
-      <Pricing />
-      {/* <About /> */}
+      <Offerings />
+      <About />
       <Contact />
       <Footer />
     </div>

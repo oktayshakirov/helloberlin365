@@ -6,9 +6,10 @@ export function SEOSchema() {
     "@type": "LocalBusiness",
     "@id": "https://helloberlin365.com/#organization",
     name: "Hello Berlin 365",
-    alternateName: "Hello Berlin 365 - Webentwicklung & Fotografie",
+    alternateName:
+      "Hello Berlin 365 - Webentwicklung, Drohnenfoto & Drohnenvideo",
     description:
-      "Professionelle Webentwicklung, Business-Fotografie und Printdesign Services in Berlin. Spezialisiert auf lokale Unternehmen und Startups.",
+      "Professionelle Webentwicklung, Drohnenfoto & Drohnenvideo und Printdesign Services in Berlin. Spezialisiert auf lokale Unternehmen und Startups.",
     url: "https://helloberlin365.com",
     email: "info@helloberlin365.com",
     foundingDate: "2025",
@@ -43,9 +44,9 @@ export function SEOSchema() {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "Business-Fotografie",
+            name: "Drohnenfoto & Drohnenvideo",
             description:
-              "Professionelle Produkt-, Team- und Locationfotografie",
+              "Professionelle Luftaufnahmen und Drohnenvideos für Unternehmen, Immobilien und Events",
           },
         },
         {
@@ -70,18 +71,7 @@ export function SEOSchema() {
           "https://www.instagram.com/oktay.shakirov/",
         ],
       },
-      {
-        "@type": "Person",
-        name: "Mustafa Mustafov",
-        jobTitle: "Fotograf",
-        url: "https://musiphotography.myportfolio.com/",
-        sameAs: [
-          "https://www.linkedin.com/in/mustafa-mustafov-345aa0336/",
-          "https://www.instagram.com/musiphotography/",
-        ],
-      },
     ],
-    priceRange: "€1099-€2999",
   };
 
   return (

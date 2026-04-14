@@ -69,8 +69,8 @@ helloberlin365/
 ## 📱 Sections
 
 1. **Hero Section** - Agency pitch and CTA
-2. **Services** - Web development, photography, print media
-3. **Pricing** - Three-tier pricing structure
+2. **Services** - Web/mobile development, drone photo & video, print media
+3. **Offerings** - Example service packages (quote on request)
 4. **About Us** - Mission, team, and tools
 5. **Contact** - Contact form and information
 

@@ -2,23 +2,18 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Check, Globe, Camera, Printer, Palette } from "lucide-react";
 
-interface PricingPlan {
+interface OfferingPlan {
   title: string;
-  price: string;
   features: string[];
   isPopular?: boolean;
-  salePrice?: string;
-  currencySymbol?: string;
   description?: string;
 }
 
-const pricingPlans: PricingPlan[] = [
+const offeringPlans: OfferingPlan[] = [
   {
-    title: "Hello Start",
-    price: "1999",
-    salePrice: "1099",
-    currencySymbol: "€",
-    description: "Ihr professioneller Start im Web.",
+    title: "Einstieg",
+    description:
+      "Schnell online sichtbar – ideal für den ersten professionellen Auftritt.",
     features: [
       "Webseite",
       "One-Pager (1 Startseite, bis zu 5 Sektionen)",
@@ -29,20 +24,18 @@ const pricingPlans: PricingPlan[] = [
       "Keyword-Recherche & -Optimierung",
       "Technische SEO & Pagespeed-Optimierung",
       "Einsprachigkeit (z. B. nur DE)",
-      "Fotografie",
-      "15 Fotos (Produkte oder Location)",
-      "Bildbearbeitung & Weboptimierung",
+      "Drohnenfoto & Drohnenvideo",
+      "15 Luftaufnahmen (Foto/Video, Location oder Objekt)",
+      "Postproduktion & Weboptimierung",
       "Print & Medien",
       "100 Visitenkarten (Design & Druck)",
     ],
   },
   {
-    title: "Hello Pro",
-    price: "2999",
-    salePrice: "1799",
-    currencySymbol: "€",
+    title: "Wachstum",
     isPopular: true,
-    description: "Mehr Details für mehr Wachstum.",
+    description:
+      "Mehr Inhalte und Reichweite – wenn Ihr Geschäft weiter wächst.",
     features: [
       "Webseite",
       "Startseite + bis zu 4 gestaltete Unterseiten",
@@ -53,20 +46,18 @@ const pricingPlans: PricingPlan[] = [
       "Keyword-Recherche & -Optimierung",
       "Technische SEO & Pagespeed-Optimierung",
       "Einsprachigkeit (z. B. nur DE)",
-      "Fotografie",
-      "40 Fotos (Produkte & Location)",
-      "Bildbearbeitung & Weboptimierung",
+      "Drohnenfoto & Drohnenvideo",
+      "40 Luftaufnahmen (Foto/Video, Location & Objekt)",
+      "Postproduktion & Weboptimierung",
       "Print & Medien",
       "250 Visitenkarten (Design & Druck)",
       "Flyer oder Preislisten (Design)",
     ],
   },
   {
-    title: "Hello VIP",
-    price: "4899",
-    salePrice: "2999",
-    currencySymbol: "€",
-    description: "Die Premium-Lösung für Ihre Marke.",
+    title: "Umfassend",
+    description:
+      "Maximale Präsenz – für Marken, die alles aus einem Guss wollen.",
     features: [
       "Webseite",
       "Startseite + bis zu 7 gestaltete Unterseiten",
@@ -77,9 +68,9 @@ const pricingPlans: PricingPlan[] = [
       "Keyword-Recherche & -Optimierung",
       "Technische SEO & Pagespeed-Optimierung",
       "Mehrsprachigkeit (z. B. DE/EN/TR)",
-      "Fotografie",
-      "100 Fotos (Produkte, Location, Team & Portraits)",
-      "Bildbearbeitung & Weboptimierung",
+      "Drohnenfoto & Drohnenvideo",
+      "100 Luftaufnahmen (Foto/Video, Location, Objekt & Event)",
+      "Postproduktion & Weboptimierung",
       "Print & Medien",
       "500 Visitenkarten (Design & Druck)",
       "Flyer oder Preislisten (Design & Druck)",
@@ -87,7 +78,7 @@ const pricingPlans: PricingPlan[] = [
   },
 ];
 
-function PricingCard({ plan }: { plan: PricingPlan }) {
+function OfferingCard({ plan }: { plan: OfferingPlan }) {
   return (
     <Card
       className={`relative glass-card transition-all duration-300 hover:scale-105 ${
@@ -99,7 +90,7 @@ function PricingCard({ plan }: { plan: PricingPlan }) {
           variant="secondary"
           className="absolute -top-3 left-1/2 transform -translate-x-1/2 border-0"
         >
-          🔥 Am beliebtesten
+          Beliebte Wahl
         </Badge>
       )}
 
@@ -108,18 +99,11 @@ function PricingCard({ plan }: { plan: PricingPlan }) {
           {plan.title}
         </CardTitle>
         {plan.description && (
-          <p className="text-sm text-text-secondary mb-2">{plan.description}</p>
+          <p className="text-sm text-text-secondary mb-3">{plan.description}</p>
         )}
-        <div className="flex items-center justify-center gap-2">
-          <span className="text-3xl font-bold text-primary">
-            {plan.currencySymbol}
-            {plan.salePrice}
-          </span>
-          <span className="text-xl text-text-tertiary line-through">
-            {plan.currencySymbol}
-            {plan.price}
-          </span>
-        </div>
+        <p className="text-sm font-medium text-primary">
+          Individuelles Angebot
+        </p>
       </CardHeader>
 
       <CardContent className="space-y-4">
@@ -142,7 +126,7 @@ function PricingCard({ plan }: { plan: PricingPlan }) {
                     {feature}
                   </span>
                 </div>
-              ) : feature.startsWith("Fotografie") ? (
+              ) : feature.startsWith("Drohnenfoto & Drohnenvideo") ? (
                 <div className="flex items-center gap-2">
                   <Camera className="h-4 w-4 text-primary flex-shrink-0" />
                   <span className="text-text-primary text-sm font-semibold">
@@ -170,24 +154,33 @@ function PricingCard({ plan }: { plan: PricingPlan }) {
   );
 }
 
-export function Pricing() {
+export function Offerings() {
   return (
-    <section id="pricing" className="py-16 px-4">
+    <section id="angebote" className="py-16 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-text-primary mb-4">
-            Transparente Preise
+            Leistungen & Beispiel-Pakete
           </h2>
-          <p className="text-xl text-text-secondary">
-            Transparente Preise für Webdesign, Fotografie und Printdesign in
-            Berlin - für jeden Bedarf das richtige Paket
+          <p className="text-xl text-text-secondary max-w-3xl mx-auto">
+            Drei typische Umfänge. Wir stimmen Leistung und Budget in einem
+            kurzen Gespräch ab und erstellen Ihr individuelles Angebot für Web,
+            Mobile, Drohnenfoto & Drohnenvideo sowie Print in Berlin.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {pricingPlans.map((plan, index) => (
-            <PricingCard key={index} plan={plan} />
+          {offeringPlans.map((plan, index) => (
+            <OfferingCard key={index} plan={plan} />
           ))}
+        </div>
+
+        <div className="mt-12 text-center max-w-2xl mx-auto space-y-3">
+          <p className="text-text-secondary leading-relaxed">
+            Jedes Projekt ist anders: Kombinationen aus den Bereichen sind
+            jederzeit möglich – auch mit kleinerem Budget oder schrittweiser
+            Erweiterung. Sprechen Sie uns an, wir finden eine passende Lösung.
+          </p>
         </div>
       </div>
     </section>

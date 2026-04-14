@@ -1,6 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Heart, Users, Globe, Linkedin, Instagram } from "lucide-react";
+import { Heart, Users } from "lucide-react";
 
 export function About() {
   return (
@@ -29,9 +28,10 @@ export function About() {
               </p>
               <p className="text-text-secondary leading-relaxed text-lg mt-4">
                 Unsere Philosophie vereint genau das. Durch die Verbindung von
-                präziser Programmierung und kreativer Fotografie schaffen wir
-                digitale Erlebnisse, die technisch überzeugen und sich echt
-                anfühlen – für einen Markenauftritt mit Charakter.
+                präziser Programmierung, starken Drohnenaufnahmen und kreativem
+                Design schaffen wir digitale Erlebnisse, die technisch
+                überzeugen und sich echt anfühlen – für einen Markenauftritt mit
+                Charakter.
               </p>
             </CardContent>
           </Card>
@@ -40,114 +40,19 @@ export function About() {
             <CardHeader className="text-center">
               <CardTitle className="text-text-primary flex items-center justify-center gap-2">
                 <Users className="h-6 w-6 text-primary" />
-                Unser Team
+                Unsere Arbeitsweise
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-3 sm:space-y-0 sm:space-x-4">
-                  <Avatar className="h-20 w-20 flex-shrink-0">
-                    <AvatarImage
-                      src="/images/avatar-oktay.jpg"
-                      alt="Oktay Shakirov, Softwareentwickler und Webentwicklung bei Hello Berlin 365"
-                    />
-                    <AvatarFallback className="bg-primary text-text-primary">
-                      OS
-                    </AvatarFallback>
-                  </Avatar>
-                  <div className="flex-1 text-center sm:text-left max-w-xs">
-                    <div className="mb-3">
-                      <p className="text-text-primary font-semibold text-lg">
-                        Oktay Shakirov
-                      </p>
-                      <p className="text-text-secondary">Softwareentwickler</p>
-                    </div>
-                    <div className="flex justify-center sm:justify-start space-x-3">
-                      <a
-                        href="https://oktayshakirov.com/"
-                        className="text-text-secondary hover:text-primary transition-colors"
-                      >
-                        <Globe className="h-5 w-5" />
-                      </a>
-                      <a
-                        href="https://www.linkedin.com/in/oktayshakirov"
-                        className="text-text-secondary hover:text-primary transition-colors"
-                      >
-                        <Linkedin className="h-5 w-5" />
-                      </a>
-                      <a
-                        href="https://www.instagram.com/oktay.shakirov/"
-                        className="text-text-secondary hover:text-primary transition-colors"
-                      >
-                        <Instagram className="h-5 w-5" />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                {/* <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-3 sm:space-y-0 sm:space-x-4">
-                  <Avatar className="h-20 w-20 flex-shrink-0">
-                    <AvatarImage
-                      src="/images/avatar-mustafa.jpg"
-                      alt="Mustafa Mustafov, professioneller Fotograf für Business-Fotografie"
-                    />
-                    <AvatarFallback className="bg-primary text-text-primary">
-                      MM
-                    </AvatarFallback>
-                  </Avatar>
-                  <div className="flex-1 text-center sm:text-left max-w-xs">
-                    <div className="mb-3">
-                      <p className="text-text-primary font-semibold text-lg">
-                        Mustafa Mustafov
-                      </p>
-                      <p className="text-text-secondary">Forograf</p>
-                    </div>
-                    <div className="flex justify-center sm:justify-start space-x-3">
-                      <a
-                        href="https://musiphotography.myportfolio.com/"
-                        className="text-text-secondary hover:text-primary transition-colors"
-                      >
-                        <Globe className="h-5 w-5" />
-                      </a>
-                      <a
-                        href="https://www.linkedin.com/in/mustafa-mustafov-345aa0336/"
-                        className="text-text-secondary hover:text-primary transition-colors"
-                      >
-                        <Linkedin className="h-5 w-5" />
-                      </a>
-                      <a
-                        href="https://www.instagram.com/musiphotography/"
-                        className="text-text-secondary hover:text-primary transition-colors"
-                      >
-                        <Instagram className="h-5 w-5" />
-                      </a>
-                    </div> */}
-                {/* </div> */}
-                {/* </div> */}
-              </div>
-
-              <div className="mt-8 pt-6 border-t border-border-secondary">
-                <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-3 sm:space-y-0 sm:space-x-4">
-                  <Avatar className="h-20 w-20 flex-shrink-0 bg-surface-secondary border-2 border-dashed border-border-secondary">
-                    <AvatarFallback className="bg-surface-secondary text-text-secondary text-2xl">
-                      ?
-                    </AvatarFallback>
-                  </Avatar>
-                  <div className="flex-1 text-center sm:text-left">
-                    <div className="mb-3">
-                      <p className="text-text-primary font-semibold text-lg">
-                        Das könntest du sein!
-                      </p>
-                      <p className="text-text-secondary">
-                        Unser Team sucht Verstärkung
-                      </p>
-                    </div>
-                    <p className="text-text-secondary text-sm">
-                      Hast du Lust, Teil unseres wachsenden Teams zu werden? Wir
-                      suchen talentierte Menschen. Kontaktiere uns!
-                    </p>
-                  </div>
-                </div>
-              </div>
+            <CardContent>
+              <ul className="space-y-3 text-text-secondary text-lg leading-relaxed">
+                <li>• Klare Prozesse von Strategie bis Umsetzung</li>
+                <li>• Transparente Kommunikation und verlässliche Termine</li>
+                <li>• Technisch saubere Entwicklung mit Fokus auf Performance</li>
+                <li>• Flexible Pakete für Web, Mobile, Drone und Print</li>
+                <li>• Fokus auf messbare Ergebnisse und nachhaltiges Wachstum</li>
+                <li>• Laufende Optimierung nach Livegang statt Stillstand</li>
+                <li>• Skalierbare Lösungen, die mit Ihrem Unternehmen mitwachsen</li>
+              </ul>
             </CardContent>
           </Card>
         </div>

@@ -7,11 +7,12 @@ import { SEOSchema } from "@/components/SEOSchema";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Hello Berlin 365 | Webentwicklung, Fotografie & Print in Berlin",
+  title:
+    "Hello Berlin 365 | Webentwicklung, Drohnenfoto & Drohnenvideo, Print in Berlin",
   description:
-    "Professionelle Webseiten, Business-Fotografie und Printdesign in Berlin. 365 Tage Service für Startups, Friseure, Gastronomie & mehr. Jetzt anfragen!",
+    "Professionelle Webseiten, Drohnenfoto & Drohnenvideo und Printdesign in Berlin. 365 Tage Service für Startups, Friseure, Gastronomie & mehr. Jetzt anfragen!",
   keywords:
-    "Webentwicklung berlin, business fotografie berlin, printdesign berlin, digitalagentur berlin, webentwicklung berlin, werbeagentur berlin",
+    "Webentwicklung berlin, drohnenfoto berlin, drohnenvideo berlin, printdesign berlin, digitalagentur berlin, werbeagentur berlin",
   authors: [{ name: "Hello Berlin 365" }],
   creator: "Hello Berlin 365",
   publisher: "Hello Berlin 365",
@@ -25,9 +26,10 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Hello Berlin 365 | Webentwicklung, Fotografie & Print in Berlin",
+    title:
+      "Hello Berlin 365 | Webentwicklung, Drohnenfoto & Drohnenvideo, Print in Berlin",
     description:
-      "Professionelle Webseiten, Business-Fotografie und Printdesign in Berlin. 365 Tage Service für Startups, Friseure, Gastronomie & mehr.",
+      "Professionelle Webseiten, Drohnenfoto & Drohnenvideo und Printdesign in Berlin. 365 Tage Service für Startups, Friseure, Gastronomie & mehr.",
     url: "https://helloberlin365.com",
     siteName: "Hello Berlin 365",
     locale: "de_DE",
@@ -37,15 +39,16 @@ export const metadata: Metadata = {
         url: "/images/meta-image.jpg",
         width: 1024,
         height: 500,
-        alt: "Hello Berlin 365 - Webentwicklung, Fotografie & Print in Berlin",
+        alt: "Hello Berlin 365 - Webentwicklung, Drohnenfoto & Drohnenvideo, Print in Berlin",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hello Berlin 365 | Webentwicklung, Fotografie & Print in Berlin",
+    title:
+      "Hello Berlin 365 | Webentwicklung, Drohnenfoto & Drohnenvideo, Print in Berlin",
     description:
-      "Professionelle Webseiten, Business-Fotografie und Printdesign in Berlin. 365 Tage Service für lokale Unternehmen.",
+      "Professionelle Webseiten, Drohnenfoto & Drohnenvideo und Printdesign in Berlin. 365 Tage Service für lokale Unternehmen.",
     images: ["/images/meta-image.jpg"],
   },
   robots: {
@@ -97,7 +100,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="de" suppressHydrationWarning>
-      <body className={`${inter.className} bg-gradient-custom min-h-screen`}>
+      <body
+        suppressHydrationWarning
+        className={`${inter.className} bg-gradient-custom min-h-screen`}
+      >
         <GoogleAnalytics />
         <SEOSchema />
         {children}

@@ -30,10 +30,10 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="#pricing"
+                  href="#angebote"
                   className="text-text-secondary hover:text-primary transition-colors"
                 >
-                  Preise
+                  Angebote
                 </a>
               </li>
               <li>
