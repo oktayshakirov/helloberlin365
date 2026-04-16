@@ -1,23 +1,6 @@
-import { Navbar } from "@/components/Navbar";
-import { Hero } from "@/components/Hero";
-import { Customers } from "@/components/Customers";
-import { Services } from "@/components/Services";
-import { Offerings } from "@/components/Offerings";
-import { About } from "@/components/About";
-import { Contact } from "@/components/Contact";
-import { Footer } from "@/components/Footer";
+import { redirect } from "next/navigation";
+import { defaultLocale } from "@/i18n/config";
 
-export default function HomePage() {
-  return (
-    <div className="min-h-screen">
-      <Navbar />
-      <Hero />
-      <Services />
-      <Customers />
-      <Offerings />
-      <About />
-      <Contact />
-      <Footer />
-    </div>
-  );
+export default async function RootRedirectPage() {
+  redirect(`/${defaultLocale}`);
 }

@@ -2,44 +2,31 @@
 
 import Image from "next/image";
 import { Home, Code, Layers, Users, Phone } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Socials } from "@/components/ui/socials";
 import { useEffect, useState } from "react";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import type { AppDictionary } from "@/i18n/dictionaries/types";
+import type { Locale } from "@/i18n/config";
 
-const navigation = [
-  {
-    title: "Startseite",
-    url: "#home",
-    ariaLabel: "Zur Startseite navigieren",
-    icon: Home,
-  },
-  {
-    title: "Services",
-    url: "#services",
-    ariaLabel: "Zu unsere Services navigieren",
-    icon: Code,
-  },
-  {
-    title: "Angebote",
-    url: "#angebote",
-    ariaLabel: "Zu unseren Angeboten navigieren",
-    icon: Layers,
-  },
-  {
-    title: "Über uns",
-    url: "#about",
-    ariaLabel: "Mehr über uns erfahren",
-    icon: Users,
-  },
-  {
-    title: "Kontakt",
-    url: "#contact",
-    ariaLabel: "Kontakt aufnehmen",
-    icon: Phone,
-  },
-];
+const iconMap = {
+  home: Home,
+  code: Code,
+  layers: Layers,
+  users: Users,
+  phone: Phone,
+};
 
-export function Navbar() {
+type NavbarProps = {
+  locale: Locale;
+  dictionary: AppDictionary;
+};
+
+export function Navbar({ locale, dictionary }: NavbarProps) {
+  const navigation = dictionary.navbar.items.map((item) => ({
+    ...item,
+    url: `#${item.key}`,
+    icon: iconMap[item.icon],
+  }));
   const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
@@ -66,7 +53,7 @@ export function Navbar() {
     handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [navigation]);
 
   return (
     <>
@@ -76,13 +63,13 @@ export function Navbar() {
           <nav
             className="hidden justify-between lg:flex"
             role="navigation"
-            aria-label="Hauptnavigation"
+            aria-label={dictionary.navbar.ariaLabel}
           >
             <div className="flex items-center gap-6">
               <a
                 href="#home"
                 className="flex items-center gap-3"
-                aria-label="Zur Startseite"
+                aria-label={dictionary.navbar.logoAriaLabel}
               >
                 <Image
                   src="/images/logo.png"
@@ -97,9 +84,7 @@ export function Navbar() {
 
             <div className="flex items-center">
               <ul className="flex space-x-8 list-none">
-                {navigation
-                  .filter((item) => item.title !== "Kontakt")
-                  .map((item) => {
+                {navigation.map((item) => {
                     const sectionId = item.url.replace("#", "");
                     const isActive = activeSection === sectionId;
 
@@ -130,16 +115,10 @@ export function Navbar() {
 
             <div className="flex items-center gap-4">
               <Socials className="hidden lg:flex" />
-              {navigation
-                .filter((item) => item.title === "Kontakt")
-                .map((item) => (
-                  <Button key={item.title} asChild size="lg" className="gap-2">
-                    <a href={item.url} aria-label={item.ariaLabel}>
-                      <item.icon className="h-4 w-4" />
-                      {item.title}
-                    </a>
-                  </Button>
-                ))}
+              <LanguageSwitcher
+                locale={locale}
+                ariaLabel={dictionary.navbar.languageLabel}
+              />
             </div>
           </nav>
         </div>
@@ -149,7 +128,7 @@ export function Navbar() {
       <nav
         className="fixed bottom-0 left-0 right-0 z-50 lg:hidden glass backdrop-blur-md border-t border-border-secondary"
         role="navigation"
-        aria-label="Mobile Navigation"
+        aria-label={dictionary.navbar.mobileAriaLabel}
       >
         <div className="container mx-auto px-4">
           <ul className="flex items-center justify-around py-3 list-none">

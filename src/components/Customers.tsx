@@ -11,66 +11,43 @@ import {
   Truck,
   Heart,
 } from "lucide-react";
+import type { AppDictionary } from "@/i18n/dictionaries/types";
 
-interface TargetCustomer {
-  title: string;
-  icon: React.ReactNode;
-}
-
-const customers: TargetCustomer[] = [
-  {
-    title: "Influencer",
-    icon: <Sparkles className="h-8 w-8 text-primary" />,
-  },
-  {
-    title: "Friseure",
-    icon: <Scissors className="h-8 w-8 text-primary" />,
-  },
-  {
-    title: "Startups",
-    icon: <Building2 className="h-8 w-8 text-primary" />,
-  },
-  {
-    title: "Autohäuser",
-    icon: <Car className="h-8 w-8 text-primary" />,
-  },
-  {
-    title: "Gastronomie",
-    icon: <Utensils className="h-8 w-8 text-primary" />,
-  },
-  {
-    title: "Makler",
-    icon: <Briefcase className="h-8 w-8 text-primary" />,
-  },
-  {
-    title: "Sport",
-    icon: <Dumbbell className="h-8 w-8 text-primary" />,
-  },
-  {
-    title: "Anwälte",
-    icon: <Scale className="h-8 w-8 text-primary" />,
-  },
-  {
-    title: "Transporte",
-    icon: <Truck className="h-8 w-8 text-primary" />,
-  },
-  {
-    title: "Kosmetik",
-    icon: <Heart className="h-8 w-8 text-primary" />,
-  },
+const customerIcons = [
+  Sparkles,
+  Scissors,
+  Building2,
+  Car,
+  Utensils,
+  Briefcase,
+  Dumbbell,
+  Scale,
+  Truck,
+  Heart,
 ];
 
-export function Customers() {
+type CustomersProps = {
+  dictionary: AppDictionary;
+};
+
+export function Customers({ dictionary }: CustomersProps) {
+  const customers = dictionary.customers.labels.map((title, index) => {
+    const Icon = customerIcons[index];
+    return {
+      title,
+      icon: Icon ? <Icon className="h-8 w-8 text-primary" /> : null,
+    };
+  });
+
   return (
     <section className="py-8 md:py-16 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-8 md:mb-12">
           <h2 className="text-4xl font-bold text-text-primary mb-2 md:mb-4">
-            Unsere Zielgruppen
+            {dictionary.customers.title}
           </h2>
           <p className="text-xl text-text-secondary">
-            Wir unterstützen verschiedene Branchen mit maßgeschneiderten
-            Webentwicklung, Drohnenfoto & Drohnenvideo und Printlösungen
+            {dictionary.customers.description}
           </p>
         </div>
 

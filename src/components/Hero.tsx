@@ -7,13 +7,17 @@ import Image from "next/image";
 import { Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Glow } from "@/components/ui/glow";
+import type { AppDictionary } from "@/i18n/dictionaries/types";
+import type { Locale } from "@/i18n/config";
 
-export function Hero() {
+type HeroProps = {
+  locale: Locale;
+  dictionary: AppDictionary;
+};
+
+export function Hero({ locale, dictionary }: HeroProps) {
   const [sloganNumber, setSloganNumber] = useState(0);
-  const slogans = useMemo(
-    () => ["Your Brand.", "Our Mission.", "Every Day."],
-    []
-  );
+  const slogans = useMemo(() => dictionary.hero.slogans, [dictionary.hero.slogans]);
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
@@ -97,14 +101,7 @@ export function Hero() {
   );
 
   const renderDescription = (className: string) => (
-    <p className={className}>
-      Ihre Geschichte verdient Aufmerksamkeit – wir sorgen dafür mit
-      professioneller Webentwicklung, Drohnenfoto & Drohnenvideo und
-      Printdesign. Als
-      lokale Digitalagentur unterstützen wir Berliner Unternehmen dabei, online
-      und offline erfolgreich zu sein. 365 Tage im Jahr für Startups, Friseure,
-      Restaurants, Anwälte und alle Branchen.
-    </p>
+    <p className={className}>{dictionary.hero.description}</p>
   );
 
   const renderButton = () => (
@@ -114,14 +111,14 @@ export function Hero() {
       className="gap-4 font-semibold px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full lg:w-auto"
     >
       <Phone className="h-5 w-5" />
-      <Link href="/#contact">Kontaktieren Sie uns</Link>
+      <Link href={`/${locale}#contact`}>{dictionary.hero.cta}</Link>
     </Button>
   );
 
   const renderImage = (width: number, height: number, className?: string) => (
     <Image
       src="/images/hero.webp"
-      alt="Laptop, Drohne und Büroausstattung für Webentwicklung und Drohnenservices in Berlin"
+      alt={dictionary.hero.imageAlt}
       width={width}
       height={height}
       priority

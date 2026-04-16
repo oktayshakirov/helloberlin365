@@ -1,111 +1,52 @@
-import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import GoogleAnalytics from "@/utils/GoogleAnalytics";
-import { SEOSchema } from "@/components/SEOSchema";
+import { headers } from "next/headers";
+import { cookies } from "next/headers";
+import {
+  defaultLocale,
+  isLocale,
+  localeCookieName,
+  type Locale,
+} from "@/i18n/config";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title:
-    "Hello Berlin 365 | Webentwicklung, Drohnenfoto & Drohnenvideo, Print in Berlin",
-  description:
-    "Professionelle Webseiten, Drohnenfoto & Drohnenvideo und Printdesign in Berlin. 365 Tage Service für Startups, Friseure, Gastronomie & mehr. Jetzt anfragen!",
-  keywords:
-    "Webentwicklung berlin, drohnenfoto berlin, drohnenvideo berlin, printdesign berlin, digitalagentur berlin, werbeagentur berlin",
-  authors: [{ name: "Hello Berlin 365" }],
-  creator: "Hello Berlin 365",
-  publisher: "Hello Berlin 365",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-  metadataBase: new URL("https://helloberlin365.com"),
-  alternates: {
-    canonical: "/",
-  },
-  openGraph: {
-    title:
-      "Hello Berlin 365 | Webentwicklung, Drohnenfoto & Drohnenvideo, Print in Berlin",
-    description:
-      "Professionelle Webseiten, Drohnenfoto & Drohnenvideo und Printdesign in Berlin. 365 Tage Service für Startups, Friseure, Gastronomie & mehr.",
-    url: "https://helloberlin365.com",
-    siteName: "Hello Berlin 365",
-    locale: "de_DE",
-    type: "website",
-    images: [
-      {
-        url: "/images/meta-image.jpg",
-        width: 1024,
-        height: 500,
-        alt: "Hello Berlin 365 - Webentwicklung, Drohnenfoto & Drohnenvideo, Print in Berlin",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title:
-      "Hello Berlin 365 | Webentwicklung, Drohnenfoto & Drohnenvideo, Print in Berlin",
-    description:
-      "Professionelle Webseiten, Drohnenfoto & Drohnenvideo und Printdesign in Berlin. 365 Tage Service für lokale Unternehmen.",
-    images: ["/images/meta-image.jpg"],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  icons: {
-    icon: [
-      { url: "/favicon/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/favicon/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/favicon/favicon.ico", sizes: "any" },
-    ],
-    apple: [
-      {
-        url: "/favicon/apple-touch-icon.png",
-        sizes: "180x180",
-        type: "image/png",
-      },
-    ],
-    other: [
-      {
-        rel: "icon",
-        url: "/favicon/android-chrome-192x192.png",
-        sizes: "192x192",
-        type: "image/png",
-      },
-      {
-        rel: "icon",
-        url: "/favicon/android-chrome-512x512.png",
-        sizes: "512x512",
-        type: "image/png",
-      },
-    ],
-  },
-  manifest: "/favicon/site.webmanifest",
-};
-
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const headerStore = await headers();
+
+  const cookieStore = await cookies();
+  const localeCookie = cookieStore.get(localeCookieName)?.value;
+
+  const headerLocale = headerStore.get("x-locale");
+  const geoCountry = headerStore.get("x-vercel-ip-country")?.toUpperCase();
+  const geoLocale: Locale = geoCountry === "DE" ? "de" : defaultLocale;
+
+  const headerLocaleValue: Locale | null = isLocale(headerLocale ?? "")
+    ? (headerLocale as Locale)
+    : null;
+
+  const cookieLocaleValue: Locale | null = isLocale(localeCookie ?? "")
+    ? (localeCookie as Locale)
+    : null;
+
+  const htmlLang: Locale =
+    headerLocaleValue ?? cookieLocaleValue ?? geoLocale ?? defaultLocale;
+
   return (
-    <html lang="de" suppressHydrationWarning>
+    <html
+      lang={htmlLang}
+      suppressHydrationWarning
+    >
       <body
         suppressHydrationWarning
         className={`${inter.className} bg-gradient-custom min-h-screen`}
       >
         <GoogleAnalytics />
-        <SEOSchema />
         {children}
       </body>
     </html>

@@ -1,16 +1,25 @@
 import Script from "next/script";
+import type { AppDictionary } from "@/i18n/dictionaries/types";
+import type { Locale } from "@/i18n/config";
 
-export function SEOSchema() {
+type SEOSchemaProps = {
+  dictionary: AppDictionary;
+  locale: Locale;
+};
+
+export function SEOSchema({ dictionary, locale }: SEOSchemaProps) {
+  const localeRootUrl = `https://helloberlin365.com/${locale}`;
+  const inLanguage = dictionary.metadata.ogLocale.replace("_", "-");
+
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://helloberlin365.com/#organization",
+    "@id": `${localeRootUrl}/#organization`,
     name: "Hello Berlin 365",
-    alternateName:
-      "Hello Berlin 365 - Webentwicklung, Drohnenfoto & Drohnenvideo",
-    description:
-      "Professionelle Webentwicklung, Drohnenfoto & Drohnenvideo und Printdesign Services in Berlin. Spezialisiert auf lokale Unternehmen und Startups.",
-    url: "https://helloberlin365.com",
+    alternateName: dictionary.seoSchema.alternateName,
+    description: dictionary.seoSchema.description,
+    url: localeRootUrl,
+    inLanguage,
     email: "info@helloberlin365.com",
     foundingDate: "2025",
     areaServed: {
@@ -29,33 +38,30 @@ export function SEOSchema() {
     },
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: "Digital Services",
+      name: dictionary.seoSchema.catalogName,
       itemListElement: [
         {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "Webdesign & Entwicklung",
-            description:
-              "Responsive Webseiten mit WordPress und individuellem Design",
+            name: dictionary.seoSchema.services[0].name,
+            description: dictionary.seoSchema.services[0].description,
           },
         },
         {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "Drohnenfoto & Drohnenvideo",
-            description:
-              "Professionelle Luftaufnahmen und Drohnenvideos für Unternehmen, Immobilien und Events",
+            name: dictionary.seoSchema.services[1].name,
+            description: dictionary.seoSchema.services[1].description,
           },
         },
         {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "Printmedien Design",
-            description:
-              "Visitenkarten, Flyer, Broschüren und Preislisten Design",
+            name: dictionary.seoSchema.services[2].name,
+            description: dictionary.seoSchema.services[2].description,
           },
         },
       ],
@@ -64,7 +70,7 @@ export function SEOSchema() {
       {
         "@type": "Person",
         name: "Oktay Shakirov",
-        jobTitle: "Softwareentwickler",
+        jobTitle: dictionary.seoSchema.employeeJobTitle,
         url: "https://oktayshakirov.com/",
         sameAs: [
           "https://www.linkedin.com/in/oktayshakirov",

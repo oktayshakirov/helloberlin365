@@ -5,8 +5,15 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Send } from "lucide-react";
 import { sendEmail } from "@/app/actions";
 import { useActionState, useEffect, useState } from "react";
+import type { AppDictionary } from "@/i18n/dictionaries/types";
+import type { Locale } from "@/i18n/config";
 
-export function Contact() {
+type ContactProps = {
+  locale: Locale;
+  dictionary: AppDictionary;
+};
+
+export function Contact({ locale, dictionary }: ContactProps) {
   const [state, formAction] = useActionState(sendEmail, { error: "" } as
     | { error: string }
     | { success: string });
@@ -20,11 +27,10 @@ export function Contact() {
     <section id="contact" className="py-16 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-text-primary mb-4">Kontakt</h2>
-          <p className="text-xl text-text-secondary">
-            Wählen Sie passende Themen und nennen Sie Ihr ungefähres Budget –
-            wir melden uns mit einem Vorschlag.
-          </p>
+          <h2 className="text-4xl font-bold text-text-primary mb-4">
+            {dictionary.contact.title}
+          </h2>
+          <p className="text-xl text-text-secondary">{dictionary.contact.description}</p>
         </div>
 
         <div className="w-full">
@@ -32,11 +38,12 @@ export function Contact() {
             <CardHeader>
               <CardTitle className="text-text-primary flex items-center gap-2">
                 <Send className="h-5 w-5" />
-                Nachricht senden
+                {dictionary.contact.cardTitle}
               </CardTitle>
             </CardHeader>
             <CardContent>
               <form action={formAction} className="space-y-6">
+                <input type="hidden" name="locale" value={locale} />
                 <input
                   type="hidden"
                   name="formStartedAt"
@@ -62,21 +69,21 @@ export function Contact() {
                 )}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <label className="text-text-primary">Name</label>
+                    <label className="text-text-primary">{dictionary.contact.nameLabel}</label>
                     <input
                       type="text"
                       name="name"
-                      placeholder="Ihr Name"
+                      placeholder={dictionary.contact.namePlaceholder}
                       required
                       className="w-full p-3 rounded-lg bg-surface-primary border border-border-primary text-text-primary placeholder-text-muted"
                     />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-text-primary">E-Mail</label>
+                    <label className="text-text-primary">{dictionary.contact.emailLabel}</label>
                     <input
                       type="email"
                       name="email"
-                      placeholder="ihre.email@beispiel.com"
+                      placeholder={dictionary.contact.emailPlaceholder}
                       required
                       className="w-full p-3 rounded-lg bg-surface-primary border border-border-primary text-text-primary placeholder-text-muted"
                     />
@@ -85,9 +92,9 @@ export function Contact() {
 
                 <fieldset className="rounded-lg border border-border-primary p-4">
                   <legend className="text-text-primary font-medium px-1">
-                    Wofür interessieren Sie sich?{" "}
+                    {dictionary.contact.interestsLabel}{" "}
                     <span className="text-text-secondary font-normal text-sm">
-                      (eine oder mehrere Optionen)
+                      {dictionary.contact.interestsHint}
                     </span>
                   </legend>
                   <div className="mt-3 flex flex-row flex-wrap items-center gap-x-8 gap-y-3">
@@ -95,39 +102,41 @@ export function Contact() {
                       <input
                         type="checkbox"
                         name="interest"
-                        value="Webentwicklung"
+                        value="webdevelopment"
                         className="h-[1.125rem] w-[1.125rem] shrink-0 cursor-pointer rounded border border-border-primary bg-surface-primary accent-primary text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-surface-primary"
                       />
                       <span className="text-sm sm:text-base">
-                        Webentwicklung
+                        {dictionary.contact.interests.webdevelopment}
                       </span>
                     </label>
                     <label className="flex cursor-pointer items-center gap-2.5 text-text-secondary">
                       <input
                         type="checkbox"
                         name="interest"
-                        value="Drohnenaufnahmen"
+                        value="drone"
                         className="h-[1.125rem] w-[1.125rem] shrink-0 cursor-pointer rounded border border-border-primary bg-surface-primary accent-primary text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-surface-primary"
                       />
                       <span className="text-sm sm:text-base">
-                        Drohnenaufnahmen
+                        {dictionary.contact.interests.drone}
                       </span>
                     </label>
                     <label className="flex cursor-pointer items-center gap-2.5 text-text-secondary">
                       <input
                         type="checkbox"
                         name="interest"
-                        value="Print"
+                        value="print"
                         className="h-[1.125rem] w-[1.125rem] shrink-0 cursor-pointer rounded border border-border-primary bg-surface-primary accent-primary text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-surface-primary"
                       />
-                      <span className="text-sm sm:text-base">Printdesign</span>
+                      <span className="text-sm sm:text-base">
+                        {dictionary.contact.interests.print}
+                      </span>
                     </label>
                   </div>
                 </fieldset>
 
                 <div className="space-y-2">
                   <label htmlFor="budget" className="text-text-primary">
-                    Ungefähres Budget
+                    {dictionary.contact.budgetLabel}
                   </label>
                   <input
                     id="budget"
@@ -135,23 +144,23 @@ export function Contact() {
                     name="budget"
                     required
                     maxLength={500}
-                    placeholder="z. B. ca. 3.000 €, flexibel, oder: erst Beratung"
+                    placeholder={dictionary.contact.budgetPlaceholder}
                     className="w-full p-3 rounded-lg bg-surface-primary border border-border-primary text-text-primary placeholder-text-muted"
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-text-primary">Nachricht</label>
+                  <label className="text-text-primary">{dictionary.contact.messageLabel}</label>
                   <textarea
                     name="message"
                     rows={5}
-                    placeholder="Was brauchen Sie genau? Ziel, Zeitrahmen, bestehende Website …"
+                    placeholder={dictionary.contact.messagePlaceholder}
                     required
                     className="w-full p-3 rounded-lg bg-surface-primary border border-border-primary text-text-primary placeholder-text-muted"
                   />
                 </div>
                 <Button type="submit" className="w-full">
-                  Nachricht senden
+                  {dictionary.contact.submit}
                 </Button>
               </form>
             </CardContent>
