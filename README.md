@@ -2,7 +2,7 @@
 
 A modern, responsive single-page web presence for the Hello Berlin 365 creative agency.
 
-![HelloBerlin365](https://oktayshakirov.com/assets/images/projects/helloberlin365.png "HelloBerlin365")
+![HelloBerlin365](https://oktayshakirov.com/assets/images/projects/helloberlin365.webp "HelloBerlin365")
 
 <p align="center">
   <a href="https://helloberlin365.com"><strong>➥ Demo</strong></a>
